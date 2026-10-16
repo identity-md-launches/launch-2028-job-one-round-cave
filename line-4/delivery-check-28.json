@@ -1,0 +1,25 @@
+{
+  "all_passed": true,
+  "new_number": 28,
+  "prior_json_records_unchanged": 27,
+  "goal_exactly_unchanged": true,
+  "wall_dimensions": [
+    1254,
+    1254
+  ],
+  "wall_format": "PNG",
+  "wall_sha256": "fb946722b6762f1c24113c167cacd1dfc7ec502ad58813a50c786f32e1f5c930",
+  "canonical_matches_named_output": true,
+  "preview_dimensions": [
+    512,
+    512
+  ],
+  "preview_format": "JPEG",
+  "preview_bytes": 86803,
+  "record_hash_matches_wall": true,
+  "new_files_within_scope": true,
+  "new_non_artifact_files_under_100kb": true,
+  "test_suites": 8,
+  "tests_passed": 127,
+  "unmet_visual_requirements": []
+}

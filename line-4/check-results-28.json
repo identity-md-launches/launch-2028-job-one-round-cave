@@ -1,0 +1,77 @@
+{
+  "checks": [
+    {
+      "command": [
+        "python3",
+        "-B",
+        "line-4/tools/apidelta/selftest.py"
+      ],
+      "exit": 0,
+      "output": "............................................\n----------------------------------------------------------------------\nRan 44 tests in 0.718s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "line-4/tools/authcheck/selftest.py"
+      ],
+      "exit": 0,
+      "output": ".............\n----------------------------------------------------------------------\nRan 13 tests in 21.987s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "line-4/tools/boundcheck/selftest.py"
+      ],
+      "exit": 0,
+      "output": "...........\n----------------------------------------------------------------------\nRan 11 tests in 0.529s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "line-4/tools/constcheck/selftest.py"
+      ],
+      "exit": 0,
+      "output": "...........\n----------------------------------------------------------------------\nRan 11 tests in 0.605s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "line-4/tools/dependcheck/selftest.py"
+      ],
+      "exit": 0,
+      "output": "...........\n----------------------------------------------------------------------\nRan 11 tests in 2.493s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "line-4/tools/multiplecheck/selftest.py"
+      ],
+      "exit": 0,
+      "output": "................\n----------------------------------------------------------------------\nRan 16 tests in 3.490s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "line-4/tools/schemecheck/selftest.py"
+      ],
+      "exit": 0,
+      "output": "...........\n----------------------------------------------------------------------\nRan 11 tests in 1.083s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "line-4/tools/uniquecheck/selftest.py"
+      ],
+      "exit": 0,
+      "output": "..........\n----------------------------------------------------------------------\nRan 10 tests in 0.709s\n\nOK\n"
+    }
+  ],
+  "all_passed": true
+}

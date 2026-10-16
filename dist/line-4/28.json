@@ -1,0 +1,30 @@
+{
+  "name": "The Changed Lock",
+  "image": "https://api.imd.fun/artifacts/fb946722b6762f1c24113c167cacd1dfc7ec502ad58813a50c786f32e1f5c930",
+  "attributes": [
+    {
+      "trait_type": "Cave",
+      "value": "Lava"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Line 4"
+    },
+    {
+      "trait_type": "Number",
+      "value": 28
+    },
+    {
+      "trait_type": "Left behind",
+      "value": "SchemeCheck"
+    },
+    {
+      "trait_type": "Meaning",
+      "value": "An ochre key beside a charcoal keyhole warns that a familiar entrance may require a different way in."
+    },
+    {
+      "trait_type": "One thing",
+      "value": "Detect breaking OpenAPI changes"
+    }
+  ]
+}

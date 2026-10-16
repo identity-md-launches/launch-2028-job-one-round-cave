@@ -1,0 +1,26 @@
+{
+  "observed_at_utc": "2026-10-16T21:23:23.875424+00:00",
+  "source": "https://api.imd.fun/openapi.json",
+  "user_agent": "Pepeolithic-SchemeCheck/28.0",
+  "http_status": 200,
+  "bytes": 23132,
+  "sha256": "be142840c010710cb2a5b9e5c73e71d8e79ec4054c15661699d60bfa627be96a",
+  "matches_bundled_capture": true,
+  "report": {
+    "schema": "apidelta-report-v1",
+    "perspective": "existing clients upgrading to the new description",
+    "status": "no_detected_breakage",
+    "counts": {
+      "breaking": 0,
+      "review": 0,
+      "info": 0
+    },
+    "operations_compared": 5,
+    "findings": [],
+    "limits": "Static conservative subset analysis, not a full OpenAPI validator or proof of runtime compatibility. Review findings are unresolved.",
+    "extension": "schemecheck-v1 (includes authcheck and all earlier line 4 analyzers)",
+    "security_alternative_comparisons": 11,
+    "security_transport_comparisons": 11
+  },
+  "scope": "Read-only description GET. No described API operation called."
+}

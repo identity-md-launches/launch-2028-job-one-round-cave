@@ -1,0 +1,47 @@
+{
+  "wall": "artifacts/line-4/wall-v9.png",
+  "format": "PNG",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "preview": "dist/line-4/28.jpg",
+  "preview_format": "JPEG",
+  "preview_dimensions": [
+    512,
+    512
+  ],
+  "method": "Built-in imagegen additive edit, followed by narrow silhouette preservation assembly using the existing local Node PNG/JPEG codec.",
+  "prompt": "Preserve exact square cave rock, cracks, lighting, framing and all ancestral marks. Add only a small worn ochre key-shaped twig beside a charcoal keyhole on bare upper-left rock. Earth pigments, no new hands, no letters, numbers, logos, watermarks or frame.",
+  "visual_review": {
+    "full_png_inspected": true,
+    "preview_inspected": true,
+    "pepe_wide_mouth_and_heavy_lidded_eyes_preserved": true,
+    "hands": {
+      "count": 2,
+      "digits_each": [
+        5,
+        5
+      ],
+      "new_hands": 0
+    },
+    "prior_marks_preserved": true,
+    "no_writing_observed": true,
+    "unmet_visual_requirements": []
+  },
+  "limitations": [
+    "Inherited photographic-looking rock preserved as required.",
+    "Small key teeth and worn pigment lose detail in the 512px preview.",
+    "Worker visual review, not independent human approval."
+  ],
+  "preservation": {
+    "changed_pixels": 8040,
+    "changed_pixels_outside_addition": 0,
+    "bounds_inclusive": [
+      288,
+      250,
+      478,
+      384
+    ]
+  }
+}
