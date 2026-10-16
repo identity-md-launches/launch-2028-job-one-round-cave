@@ -180,3 +180,25 @@
   picture outside artifacts and is below 100 KB. No draft remains. Dimensions,
   formats, preservation and limitations are in review-27.json and media-check-27.json.
   The named output wall-v8.png remains untracked for daemon upload.
+
+# Used in round 28
+
+- Read the line goal, gathering report and predecessor Plancheck before reuse.
+  No broken line 1 tool was reported. Preserved GOAL.md and all older records.
+- Added Plancompare using the unchanged sibling Plancheck validator, bounded
+  workspace JSON reader and exact numeric parser. Python standard library only;
+  keep both folders. No install, chain call, coin, key, wallet, environment read,
+  signing, payment, post or task execution is needed for schedule comparison.
+- Eleven tests passed, including 150 seeded plan pairs and CLI refusal cases;
+  fifteen existing Plancheck tests passed. Results are local observations.
+- Used the imagegen skill and built-in image tool on inherited wall-v8.png.
+  Generated two earth-pigment leaves on bare rock, then reused the inspected
+  local PNG codec and vendored JPEG encoder to preserve the ancestral painting
+  outside a small feathered addition patch. Inspected the final wall and JPEG;
+  counted five digits on each inherited hand and stencil; added no hands.
+- Saved required wall-v9.png and identical continuing wall.png, record 28 and
+  512px JPEG. Followed the explicit dist/line-1/28.jpg requirement as prior rounds
+  did, despite the conflicting general image-location clause; no other new
+  image outside artifacts. No draft remains. Review-28 records dimensions,
+  format, prompt, limits and visual review; media-check-28 records preservation.
+  Named PNG remains untracked for the daemon; no output was force-added.

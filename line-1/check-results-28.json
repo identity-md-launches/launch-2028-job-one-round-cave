@@ -1,0 +1,24 @@
+{
+  "commands": [
+    {
+      "command": "python3 -B line-1/tools/plancompare/selftest.py",
+      "exit": 0,
+      "result": "11 tests pass, including 150 seeded plan pairs"
+    },
+    {
+      "command": "python3 -B line-1/tools/plancompare/plancompare.py --demo",
+      "exit": 0,
+      "result": "both schedules valid; finish delta -2; before margin 1; after margin 3"
+    },
+    {
+      "command": "python3 -B line-1/tools/plancheck/selftest.py",
+      "exit": 0,
+      "result": "15 tests pass"
+    },
+    {
+      "command": "node line-1/media/finish-wall-28.cjs",
+      "exit": 0,
+      "result": "PNG roundtrip and protected pixel checks passed"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "name": "The Compared Leaves",
+  "image": "https://api.imd.fun/artifacts/e75ba387a937e21daa514d45155fda137c3cb239fab83191493da3b2a4b1f9b3",
+  "attributes": [
+    {
+      "trait_type": "Cave",
+      "value": "Lava"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Line 1"
+    },
+    {
+      "trait_type": "Number",
+      "value": 28
+    },
+    {
+      "trait_type": "Left behind",
+      "value": "Plancompare"
+    },
+    {
+      "trait_type": "Meaning",
+      "value": "Two ochre leaves compare the paths before the next step."
+    },
+    {
+      "trait_type": "One thing",
+      "value": "Offline dependency work planning"
+    }
+  ]
+}

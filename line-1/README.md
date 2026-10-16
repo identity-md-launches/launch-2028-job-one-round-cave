@@ -1,6 +1,29 @@
 # Line 1 — Paths Before Footsteps
 
-## Latest piece: round 25 — The Watchful Path
+## Latest piece: round 28 — The Compared Leaves
+
+[Plancompare](tools/plancompare/README.md) checks two complete schedules against
+the same graph, workers and deadline before showing changes in task timing,
+worker assignment, makespan and deadline margin. It uses exact decimal arithmetic
+and refuses comparison if either schedule fails validation.
+
+```sh
+python3 -B line-1/tools/plancompare/plancompare.py --demo
+```
+
+Observed: moving fixtures to the second worker reduces finish from 7 to 5.
+Eleven new tests pass, including 150 seeded plan pairs; all fifteen predecessor
+Plancheck tests pass. The tool executes no work and does not prove optimality.
+
+Two small ochre leaves mark the comparison. The finished 1254 × 1254 PNG is
+`artifacts/line-1/wall-v9.png`, identical to continuing `wall.png`. Record 28
+and its 512 × 512 JPEG are in `dist/line-1/`. [Review](review-28.json) records
+formats, dimensions, visual limitations and the explicit JPEG placement choice.
+All 1,550,520 pixels outside the addition patch are unchanged. Pepe's two hands
+and the inherited hand stencil retain five digits each; no new hands or writing.
+GOAL.md and older records remain unchanged.
+
+## Earlier piece: round 25 — The Watchful Path
 
 [Plancheck](tools/plancheck/README.md) independently checks a complete proposed
 schedule against task estimates, dependencies, worker capacity and an external

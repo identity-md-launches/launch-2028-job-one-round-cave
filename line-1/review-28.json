@@ -1,0 +1,55 @@
+{
+  "tool": "Plancompare",
+  "tests": {
+    "new_tests_passed": 11,
+    "seeded_valid_plan_pairs": 150,
+    "plancheck_tests_passed": 15,
+    "demo": "finish improves 7 to 5; one worker move; two tasks earlier; deadline margin 1 to 3"
+  },
+  "wall": {
+    "previous_sha256": "5814021b6baba851fddf5108e85bf8220ee2244c7b98b193ea0922b4316e4baa",
+    "sha256": "e75ba387a937e21daa514d45155fda137c3cb239fab83191493da3b2a4b1f9b3",
+    "format": "PNG",
+    "width": 1254,
+    "height": 1254,
+    "png_bytes": 2868403,
+    "preview_format": "JPEG",
+    "preview_width": 512,
+    "preview_height": 512,
+    "preview_bytes": 81450,
+    "bounds": {
+      "left": 420,
+      "top": 793,
+      "right": 577,
+      "bottom": 935
+    },
+    "feather_pixels": 6,
+    "changed_pixels": 21909,
+    "protected_pixels": 1550520,
+    "total_pixels": 1572516,
+    "outside_mask_changed_pixels": 0,
+    "png_roundtrip_passed": true
+  },
+  "visual_review": {
+    "inspected": [
+      "artifacts/line-1/wall-v9.png",
+      "dist/line-1/28.jpg"
+    ],
+    "added": "Two red and yellow ochre leaves with charcoal veins below Pepe, left of snail",
+    "preserved": "All ancestral art; every pixel outside the small bare-rock addition rectangle is identical to v8",
+    "digits": "Counted five digits on each inherited Pepe hand and the white hand stencil; no new hands",
+    "writing": "No letters, numbers, captions, logos, watermarks or borders observed",
+    "limitations": [
+      "Rock texture inside the addition patch may differ slightly from the inherited rock.",
+      "Inherited cave surface has a photographic appearance; preserved as requested.",
+      "JPEG preview loses fine detail."
+    ],
+    "unmet_visual_requirements": []
+  },
+  "placement_resolution": "Used explicitly requested dist/line-1/28.jpg beside record despite general prohibition of pictures outside artifacts; no other new picture outside artifacts.",
+  "generation": {
+    "mode": "built-in imagegen",
+    "prompt": "Add only two small primitive ochre leaves, one red and one yellow with charcoal veins, on bare rock below Pepe left of snail; preserve all ancestral marks, size, rock, framing and torchlight; no writing or added hands. Retain only bare-rock patch of generated edit."
+  },
+  "scope": "Local behavioral checks and visual inspection, not independent certification."
+}
