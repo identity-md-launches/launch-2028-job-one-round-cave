@@ -1,0 +1,103 @@
+{
+  "step": 28,
+  "tool": "RewardBounds",
+  "wall": {
+    "path": "artifacts/line-3/wall-v9.png",
+    "canonical": "artifacts/line-3/wall.png",
+    "format": "PNG",
+    "dimensions": [
+      1254,
+      1254
+    ],
+    "bytes": 2420471,
+    "sha256": "93d6a3a5a41eec8ccc73d02b54750083218b04f9dbe5edc4729d8d5932e88dac"
+  },
+  "preview": {
+    "path": "dist/line-3/28.jpg",
+    "format": "JPEG",
+    "dimensions": [
+      512,
+      512
+    ],
+    "bytes": 54001
+  },
+  "preservation": {
+    "source": "artifacts/line-3/wall-v8.png",
+    "source_sha256": "479a29d225f1860f2d235ec8f2d9b3ab4abbd39ad7764dc496ed623a55d15c8c",
+    "generated_edit_sha256": "a450c25696371bb97270b387c34479717045dc481452701dbd1bd779618e1d8b",
+    "output_sha256": "93d6a3a5a41eec8ccc73d02b54750083218b04f9dbe5edc4729d8d5932e88dac",
+    "patch_xywh": [
+      596,
+      440,
+      143,
+      66
+    ],
+    "generated_source_xywh": [
+      522,
+      450,
+      176,
+      76
+    ],
+    "changed_pixels": 3589,
+    "changed_pixels_outside_patch": 0,
+    "protected_rgb_sha256": "2846e622787ba6f1bf05c9cef34d5785c5c63eed6b62c36b9ae851ff7c77fbf3",
+    "method": "Only generated new pigment selected and placed on bare central rock; all other RGB pixels retained.",
+    "png_dimensions": [
+      1254,
+      1254
+    ],
+    "png_bytes": 2420471,
+    "jpeg_dimensions": [
+      512,
+      512
+    ],
+    "jpeg_bytes": 54001
+  },
+  "visual_review": {
+    "status": "Worker inspected finished full-size PNG and encoded JPEG",
+    "unmet_requirements": [],
+    "observations": [
+      "Both ancestral wide-mouth heavy-lidded Pepe figures remain unchanged.",
+      "The sole visible inherited hand retains five digits: four fingers and one thumb. No new hands or handprints.",
+      "Added only a small charcoal bowl with two red ochre pebbles between two yellow-ochre standing stones.",
+      "No letters, numbers, captions, logos, signatures, watermarks, border or frame observed.",
+      "Original square dimensions, rock, cracks, light and framing retained; all RGB pixels outside the bare-rock patch are identical."
+    ],
+    "limitations": [
+      "Worker review is not independent human approval.",
+      "Small strokes are less distinct in the JPEG.",
+      "Inherited rock has photographic appearance; preserving it retains that appearance."
+    ]
+  },
+  "checks": {
+    "rewardbounds_tests_passed": 15,
+    "seeded_exhaustive_oracle_cases": "more than 300",
+    "unbounded_equivalence_cases": 100,
+    "inherited_tests_passed": 77,
+    "inherited_demos_expected_exit": 7,
+    "total_tests_passed": 92,
+    "rewardbounds_demo_exit": 0,
+    "isolated_offline_demo_exit": 0,
+    "demo_budget_units": "1000000000000000000",
+    "compact_1000_row_receipt_roundtrip": true,
+    "image_structure_valid": true,
+    "goal_unchanged": true,
+    "ancestor_wall_hash_matches_record": true,
+    "record_image_hash_matches": true,
+    "older_records_unchanged": true,
+    "changed_paths_in_scope": true,
+    "delivered_source_files_under_100kb": true,
+    "named_output_untracked": true,
+    "delivery_passed": true
+  },
+  "limitations": [
+    "Historical Ethereum ZTO metadata reused; no live balance query.",
+    "Minimum-first policy is explicit; only positive weights receive discretionary units.",
+    "RewardBounds has its own schema and complete-recomputation verifier; RewardSplit-specific audit/batch/merge tools do not accept it.",
+    "Largest-remainder rounding can reduce an individual share as the total budget rises.",
+    "Unsigned reports do not establish identity, entitlement, available funds, authorization or payment.",
+    "Detailed reports can hit the 256-KiB output bound before 1000 contributors."
+  ],
+  "image_method": "Built-in imagegen created the mark; only its new pigment was composited over original bare rock. Existing local PNG and JPEG helpers encoded outputs.",
+  "image_prompt_record": "line-3/asset-build/README-28.md"
+}

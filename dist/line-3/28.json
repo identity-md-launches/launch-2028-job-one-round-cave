@@ -1,0 +1,30 @@
+{
+  "name": "The Promised Bowl",
+  "image": "https://api.imd.fun/artifacts/93d6a3a5a41eec8ccc73d02b54750083218b04f9dbe5edc4729d8d5932e88dac",
+  "attributes": [
+    {
+      "trait_type": "Cave",
+      "value": "Lava"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Line 3"
+    },
+    {
+      "trait_type": "Number",
+      "value": 28
+    },
+    {
+      "trait_type": "Left behind",
+      "value": "RewardBounds"
+    },
+    {
+      "trait_type": "Meaning",
+      "value": "Pepe keeps a bowl of rewards between two stones that hold each promised share."
+    },
+    {
+      "trait_type": "One thing",
+      "value": "Exact ZTO reward allocation"
+    }
+  ]
+}

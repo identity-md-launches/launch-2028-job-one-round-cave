@@ -1,0 +1,172 @@
+{
+  "scope": "Offline inherited-tool regression after RewardSplit bounded compact-output repair; sources and self-tests read before execution.",
+  "new_tool_rewardbounds": "Checked separately by its implementation/review agents.",
+  "total_selftest_suites": 7,
+  "total_tests_passed": 77,
+  "total_demo_commands": 7,
+  "all_expected_results_passed": true,
+  "limitations": "Self-checks provide local evidence, not independent certification; no network captures, signatures, transactions, payment, or image checks.",
+  "results": [
+    {
+      "tool": "rewardsplit",
+      "kind": "selftest",
+      "command": "python3 -B line-3/tools/rewardsplit/selftest.py",
+      "expected_exit": 0,
+      "exit": 0,
+      "passed": true,
+      "stdout_excerpt": "",
+      "stderr_excerpt": "ts.test_decimal_weights_and_exact_rounding) ... ok\ntest_invalid_contributors (__main__.RewardTests.test_invalid_contributors) ... ok\ntest_json_duplicate_keys_and_nonfinite_numbers (__main__.RewardTests.test_json_duplicate_keys_and_nonfinite_numbers) ... ok\ntest_large_roster_compact_output_roundtrips_through_receipt (__main__.RewardTests.test_large_roster_compact_output_roundtrips_through_receipt) ... ok\ntest_maximum_row_count (__main__.RewardTests.test_maximum_row_count) ... ok\ntest_no_external_input_paths (__main__.RewardTests.test_no_external_input_paths) ... ok\ntest_order_independent_ties (__main__.RewardTests.test_order_independent_ties) ... ok\ntest_real_zto_one_token_three_ways (__main__.RewardTests.test_real_zto_one_token_three_ways) ... ok\ntest_recipient_identity_is_optional_but_duplicates_fail (__main__.RewardTests.test_recipient_identity_is_optional_but_duplicates_fail) ... ok\ntest_reject_metadata_wrong_chain_or_precision (__main__.RewardTests.test_reject_metadata_wrong_chain_or_precision) ... ok\ntest_rpc_rejects_wrong_chain_and_reorg (__main__.RewardTests.test_rpc_rejects_wrong_chain_and_reorg) ... ok\ntest_uint256_boundary (__main__.RewardTests.test_uint256_boundary) ... ok\ntest_writer_accepts_compact_output_at_exact_limit (__main__.RewardTests.test_writer_accepts_compact_output_at_exact_limit) ... ok\ntest_writer_preserves_pretty_output_at_exact_limit (__main__.RewardTests.test_writer_preserves_pretty_output_at_exact_limit) ... ok\ntest_writer_refuses_oversize_before_creating_file_or_stdout (__main__.RewardTests.test_writer_refuses_oversize_before_creating_file_or_stdout) ... ok\ntest_zero_weight_never_wins (__main__.RewardTests.test_zero_weight_never_wins) ... ok\n\n----------------------------------------------------------------------\nRan 19 tests in 0.375s\n\nOK\n",
+      "tests_passed": 19,
+      "tests_run": 19
+    },
+    {
+      "tool": "rewardsplit",
+      "kind": "demo",
+      "command": "python3 -B line-3/tools/rewardsplit/rewardsplit.py demo",
+      "expected_exit": 0,
+      "exit": 0,
+      "passed": true,
+      "stdout_excerpt": "{\n  \"schema\": \"rewardsplit-allocation-v1\",\n  \"purpose\": \"allocation only; no transaction, balance check, or promise of payment\",\n  \"token\": {\n    \"chain_id\": 1,\n    \"address\": \"0xd782bdea4ef02a0bd391eb9089470c8080f0a68e\",\n    \"symbol\": \"ZTO\",\n    \"decimals\": 18,\n    \"block_number\": 26205319,\n    \"block_hash\": \"0xa4d2f8165b2b090fe930545d71b952c06e02401f56a892caf8d6f7a8a47d8a9a\"\n  },\n  \"budget_units\": \"1000000000000000000\",\n  \"budget_amount\": \"1.000000000000000000\",\n  \"method\": \"largest remainder; equal remainders ordered by ASCII contributor id\",\n  \"rounding_units_distributed\": 1,\n  \"unallocated_units\": \"0\",\n  \"all_recipients_supplied\": false,\n  \"allocations\": [\n    {\n      \"id\": \"build\",\n      \"weight_fraction\": \"1\",\n      \"units\": \"333333333333333334\",\n      \"amount\": \"0.333333333333333334\",\n      \"rounding_unit_awarded\": true\n    },\n    {\n      \"id\": \"research\",\n      \"weight_fraction\": \"1\",\n      \"units\": \"333333333333333333\",\n      \"amount\": \"0.333333333333333333\",\n      \"rounding_unit_awarded\": false\n    },\n    {\n      \"id\": \"review\",\n      \"weight_fraction\": \"1\",\n      \"units\": \"333333333333333333\",\n      \"amount\": \"0.333333333333333333\",\n      \"rounding_unit_awarded\": false\n    }\n  ],\n  \"demo\": \"Illustrative task roles, not recipient identities; no addresses or payments.\"\n}\n",
+      "stderr_excerpt": "",
+      "json_output_valid": true
+    },
+    {
+      "tool": "rewardreceipt",
+      "kind": "selftest",
+      "command": "python3 -B line-3/tools/rewardreceipt/selftest.py",
+      "expected_exit": 0,
+      "exit": 0,
+      "passed": true,
+      "stdout_excerpt": "",
+      "stderr_excerpt": "test_added_claim_rejected (__main__.ReceiptTests.test_added_claim_rejected) ... ok\ntest_canonical_hash_independent_of_key_order (__main__.ReceiptTests.test_canonical_hash_independent_of_key_order) ... ok\ntest_changed_token_capture_rejected (__main__.ReceiptTests.test_changed_token_capture_rejected) ... ok\ntest_changed_unit_rejected (__main__.ReceiptTests.test_changed_unit_rejected) ... ok\ntest_changed_weights_rejected (__main__.ReceiptTests.test_changed_weights_rejected) ... ok\ntest_duplicate_json_keys_rejected_by_reader (__main__.ReceiptTests.test_duplicate_json_keys_rejected_by_reader) ... ok\ntest_exact_zto_receipt (__main__.ReceiptTests.test_exact_zto_receipt) ... ok\ntest_numeric_type_substitution_rejected (__main__.ReceiptTests.test_numeric_type_substitution_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.004s\n\nOK\n",
+      "tests_passed": 8,
+      "tests_run": 8
+    },
+    {
+      "tool": "rewardreceipt",
+      "kind": "demo",
+      "command": "python3 -B line-3/tools/rewardreceipt/rewardreceipt.py demo",
+      "expected_exit": 0,
+      "exit": 0,
+      "passed": true,
+      "stdout_excerpt": "{\n  \"schema\": \"rewardreceipt-v1\",\n  \"result\": \"verified exact RewardSplit allocation\",\n  \"token\": {\n    \"chain_id\": 1,\n    \"address\": \"0xd782bdea4ef02a0bd391eb9089470c8080f0a68e\",\n    \"symbol\": \"ZTO\",\n    \"decimals\": 18,\n    \"block_number\": 26205319,\n    \"block_hash\": \"0xa4d2f8165b2b090fe930545d71b952c06e02401f56a892caf8d6f7a8a47d8a9a\"\n  },\n  \"budget_units\": \"1000000000000000000\",\n  \"contributors\": 3,\n  \"request_sha256\": \"2aab721988a38569c3ebc8a3beb62fe287fa4abde5e657d33022430c2f6d6314\",\n  \"metadata_sha256\": \"26804407dd1eb430871bd2b218a59974835e3fe5020829a7c8c1f25ff41465ec\",\n  \"report_sha256\": \"b6a779dc9458a76fe457f9f3d8c4f5aeb1644f168dc5f5f11c8c118bc431ae9a\",\n  \"scope\": \"offline arithmetic and input agreement only; no work, identity, balance, signature, or payment verified\"\n}\n",
+      "stderr_excerpt": "",
+      "json_output_valid": true
+    },
+    {
+      "tool": "rewardcompare",
+      "kind": "selftest",
+      "command": "python3 -B line-3/tools/rewardcompare/selftest.py",
+      "expected_exit": 0,
+      "exit": 0,
+      "passed": true,
+      "stdout_excerpt": "",
+      "stderr_excerpt": "test_250_seeded_conservation_and_reverse (__main__.CompareTests.test_250_seeded_conservation_and_reverse) ... ok\ntest_added_payment_claim_rejected (__main__.CompareTests.test_added_payment_claim_rejected) ... ok\ntest_both_reports_verified (__main__.CompareTests.test_both_reports_verified) ... ok\ntest_capture_change_rejected (__main__.CompareTests.test_capture_change_rejected) ... ok\ntest_changed_roster_or_weights_rejected (__main__.CompareTests.test_changed_roster_or_weights_rejected) ... ok\ntest_demo_cli_review_exit (__main__.CompareTests.test_demo_cli_review_exit) ... ok\ntest_equivalent_weight_notation (__main__.CompareTests.test_equivalent_weight_notation) ... ok\ntest_known_budget_paradox (__main__.CompareTests.test_known_budget_paradox) ... ok\ntest_same_budget_and_permutation (__main__.CompareTests.test_same_budget_and_permutation) ... ok\ntest_uint256_precision (__main__.CompareTests.test_uint256_precision) ... ok\n\n----------------------------------------------------------------------\nRan 10 tests in 0.658s\n\nOK\n",
+      "tests_passed": 10,
+      "tests_run": 10
+    },
+    {
+      "tool": "rewardcompare",
+      "kind": "demo",
+      "command": "python3 -B line-3/tools/rewardcompare/rewardcompare.py demo",
+      "expected_exit": 1,
+      "exit": 1,
+      "passed": true,
+      "stdout_excerpt": "{\n  \"schema\": \"rewardcompare-v1\",\n  \"token\": {\n    \"chain_id\": 1,\n    \"address\": \"0xd782bdea4ef02a0bd391eb9089470c8080f0a68e\",\n    \"symbol\": \"ZTO\",\n    \"decimals\": 18,\n    \"block_number\": 26205319,\n    \"block_hash\": \"0xa4d2f8165b2b090fe930545d71b952c06e02401f56a892caf8d6f7a8a47d8a9a\"\n  },\n  \"before_budget_units\": \"25\",\n  \"after_budget_units\": \"26\",\n  \"budget_delta_units\": \"1\",\n  \"allocation_delta_sum_units\": \"1\",\n  \"contributors_losing_units\": [\n    \"d\",\n    \"e\"\n  ],\n  \"contributors_gaining_units\": [\n    \"a\",\n    \"b\",\n    \"c\"\n  ],\n  \"contributors_moving_against_budget\": [\n    \"d\",\n    \"e\"\n  ],\n  \"review_required\": true,\n  \"allocations\": [\n    {\n      \"id\": \"a\",\n      \"before_units\": \"7\",\n      \"after_units\": \"8\",\n      \"delta_units\": \"1\"\n    },\n    {\n      \"id\": \"b\",\n      \"before_units\": \"7\",\n      \"after_units\": \"8\",\n      \"delta_units\": \"1\"\n    },\n    {\n      \"id\": \"c\",\n      \"before_units\": \"4\",\n      \"after_units\": \"5\",\n      \"delta_units\": \"1\"\n    },\n    {\n      \"id\": \"d\",\n      \"before_units\": \"3\",\n      \"after_units\": \"2\",\n      \"delta_units\": \"-1\"\n    },\n    {\n      \"id\": \"e\",\n      \"before_units\": \"3\",\n      \"after_units\": \"2\",\n      \"delta_units\": \"-1\"\n    },\n    {\n      \"id\": \"f\",\n      \"before_units\": \"1\",\n      \"after_units\": \"1\",\n      \"delta_units\": \"0\"\n    }\n  ],\n  \"before_receipt\": {\n    \"schema\": \"rewardreceipt-v1\",\n    \"result\": \"verified exact RewardSplit allocation\",\n    \"token\": {\n      \"chain_id\": 1,\n      \"address\": \"0xd782bdea4ef02a0bd391eb9089470c8080f0a68e\",\n      \"symbol\": \"ZTO\",\n      \"decimals\": 18,\n      \"block_number\": 26205319,\n      \"block_hash\": \"0xa4d2f8165b2b090fe930545d71b952c06e02401f56a892caf8d6f7a8a47d8a9a\"\n    },\n    \"budget_units\": \"25\",\n    \"contributors\": 6,\n    \"request_sha256\": \"0c8aaeecd1ebc73700380f21cd783f2e7c72f3b9801c",
+      "stderr_excerpt": "",
+      "json_output_valid": true
+    },
+    {
+      "tool": "rewardbatch",
+      "kind": "selftest",
+      "command": "python3 -B line-3/tools/rewardbatch/selftest.py",
+      "expected_exit": 0,
+      "exit": 0,
+      "passed": true,
+      "stdout_excerpt": "",
+      "stderr_excerpt": "...........\n----------------------------------------------------------------------\nRan 11 tests in 1.115s\n\nOK\n",
+      "tests_passed": 11,
+      "tests_run": 11
+    },
+    {
+      "tool": "rewardbatch",
+      "kind": "demo",
+      "command": "python3 -B line-3/tools/rewardbatch/rewardbatch.py demo",
+      "expected_exit": 0,
+      "exit": 0,
+      "passed": true,
+      "stdout_excerpt": "{\n  \"demo\": \"Included illustrative roles; real captured ZTO metadata; no payees or payments\",\n  \"bundle\": {\n    \"schema\": \"rewardbatch-v1\",\n    \"scope\": \"offline review batches only; no transaction, payment, entitlement or authorization\",\n    \"receipt\": {\n      \"schema\": \"rewardreceipt-v1\",\n      \"result\": \"verified exact RewardSplit allocation\",\n      \"token\": {\n        \"chain_id\": 1,\n        \"address\": \"0xd782bdea4ef02a0bd391eb9089470c8080f0a68e\",\n        \"symbol\": \"ZTO\",\n        \"decimals\": 18,\n        \"block_number\": 26205319,\n        \"block_hash\": \"0xa4d2f8165b2b090fe930545d71b952c06e02401f56a892caf8d6f7a8a47d8a9a\"\n      },\n      \"budget_units\": \"1000000000000000000\",\n      \"contributors\": 3,\n      \"request_sha256\": \"2aab721988a38569c3ebc8a3beb62fe287fa4abde5e657d33022430c2f6d6314\",\n      \"metadata_sha256\": \"26804407dd1eb430871bd2b218a59974835e3fe5020829a7c8c1f25ff41465ec\",\n      \"report_sha256\": \"b6a779dc9458a76fe457f9f3d8c4f5aeb1644f168dc5f5f11c8c118bc431ae9a\",\n      \"scope\": \"offline arithmetic and input agreement only; no work, identity, balance, signature, or payment verified\"\n    },\n    \"batch_size\": 2,\n    \"batch_count\": 2,\n    \"contributor_count\": 3,\n    \"budget_units\": \"1000000000000000000\",\n    \"batched_units\": \"1000000000000000000\",\n    \"allocation_rows_sha256\": \"ce5d77ea4d5d82b3cb6e7b9fc399fd3a56780d40bcc6029db1459899a54e6310\",\n    \"order\": \"ASCII contributor id; zero allocations retained; no recipient inferred\",\n    \"batches\": [\n      {\n        \"number\": 1,\n        \"start_row\": 0,\n        \"row_count\": 2,\n        \"units\": \"666666666666666667\",\n        \"rows_sha256\": \"fe83e36a880da4fa1390988f5f74058477ba5ae75c0157a682b60cd6f88499f0\",\n        \"allocations\": [\n          {\n            \"amount\": \"0.333333333333333334\",\n            \"id\": \"build\",\n            ",
+      "stderr_excerpt": "",
+      "json_output_valid": true
+    },
+    {
+      "tool": "rewardmerge",
+      "kind": "selftest",
+      "command": "python3 -B line-3/tools/rewardmerge/selftest.py",
+      "expected_exit": 0,
+      "exit": 0,
+      "passed": true,
+      "stdout_excerpt": "",
+      "stderr_excerpt": "...........\n----------------------------------------------------------------------\nRan 11 tests in 0.887s\n\nOK\n",
+      "tests_passed": 11,
+      "tests_run": 11
+    },
+    {
+      "tool": "rewardmerge",
+      "kind": "demo",
+      "command": "python3 -B line-3/tools/rewardmerge/rewardmerge.py demo",
+      "expected_exit": 0,
+      "exit": 0,
+      "passed": true,
+      "stdout_excerpt": "{\n  \"merged\": {\n    \"schema\": \"rewardmerge-v1\",\n    \"token\": {\n      \"chain_id\": 1,\n      \"address\": \"0xd782bdea4ef02a0bd391eb9089470c8080f0a68e\",\n      \"symbol\": \"ZTO\",\n      \"decimals\": 18,\n      \"block_number\": 26205319,\n      \"block_hash\": \"0xa4d2f8165b2b090fe930545d71b952c06e02401f56a892caf8d6f7a8a47d8a9a\"\n    },\n    \"manifest_sha256\": \"be90a91db6da01f9b1b75a72662ea88d026d419bdd64a2c7d72a13933af4608f\",\n    \"metadata_sha256\": \"26804407dd1eb430871bd2b218a59974835e3fe5020829a7c8c1f25ff41465ec\",\n    \"round_count\": 2,\n    \"budget_units\": \"3000000000000000000\",\n    \"budget_amount\": \"3.000000000000000000\",\n    \"unallocated_units\": \"0\",\n    \"all_recipients_supplied\": false,\n    \"allocations\": [\n      {\n        \"id\": \"build\",\n        \"units\": \"1000000000000000001\",\n        \"amount\": \"1.000000000000000001\",\n        \"rounds\": [\n          \"first\",\n          \"second\"\n        ]\n      },\n      {\n        \"id\": \"research\",\n        \"units\": \"333333333333333333\",\n        \"amount\": \"0.333333333333333333\",\n        \"rounds\": [\n          \"first\"\n        ]\n      },\n      {\n        \"id\": \"review\",\n        \"units\": \"1666666666666666666\",\n        \"amount\": \"1.666666666666666666\",\n        \"rounds\": [\n          \"first\",\n          \"second\"\n        ]\n      }\n    ],\n    \"round_receipts\": [\n      {\n        \"id\": \"first\",\n        \"receipt\": {\n          \"schema\": \"rewardreceipt-v1\",\n          \"result\": \"verified exact RewardSplit allocation\",\n          \"token\": {\n            \"chain_id\": 1,\n            \"address\": \"0xd782bdea4ef02a0bd391eb9089470c8080f0a68e\",\n            \"symbol\": \"ZTO\",\n            \"decimals\": 18,\n            \"block_number\": 26205319,\n            \"block_hash\": \"0xa4d2f8165b2b090fe930545d71b952c06e02401f56a892caf8d6f7a8a47d8a9a\"\n          },\n          \"budget_units\": \"1000000000000000",
+      "stderr_excerpt": "",
+      "json_output_valid": true
+    },
+    {
+      "tool": "rewardwindow",
+      "kind": "selftest",
+      "command": "python3 -B line-3/tools/rewardwindow/selftest.py",
+      "expected_exit": 0,
+      "exit": 0,
+      "passed": true,
+      "stdout_excerpt": "",
+      "stderr_excerpt": "test_cli_roundtrip (__main__.WindowTests.test_cli_roundtrip) ... ok\ntest_limits (__main__.WindowTests.test_limits) ... ok\ntest_paradox_and_verification (__main__.WindowTests.test_paradox_and_verification) ... ok\ntest_seeded_consecutive_conservation (__main__.WindowTests.test_seeded_consecutive_conservation) ... ok\ntest_tampering_rejected (__main__.WindowTests.test_tampering_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 5 tests in 0.687s\n\nOK\n",
+      "tests_passed": 5,
+      "tests_run": 5
+    },
+    {
+      "tool": "rewardwindow",
+      "kind": "demo",
+      "command": "python3 -B line-3/tools/rewardwindow/rewardwindow.py demo",
+      "expected_exit": 0,
+      "exit": 0,
+      "passed": true,
+      "stdout_excerpt": "{\n  \"scan\": {\n    \"schema\": \"rewardwindow-v1\",\n    \"token\": {\n      \"chain_id\": 1,\n      \"address\": \"0xd782bdea4ef02a0bd391eb9089470c8080f0a68e\",\n      \"symbol\": \"ZTO\",\n      \"decimals\": 18,\n      \"block_number\": 26205319,\n      \"block_hash\": \"0xa4d2f8165b2b090fe930545d71b952c06e02401f56a892caf8d6f7a8a47d8a9a\"\n    },\n    \"request_sha256\": \"0c8aaeecd1ebc73700380f21cd783f2e7c72f3b9801c48d560e993492e975544\",\n    \"metadata_sha256\": \"26804407dd1eb430871bd2b218a59974835e3fe5020829a7c8c1f25ff41465ec\",\n    \"start_report_sha256\": \"242019588cdecea60c482eca654f3531b63fe37dcb6826fd2f9f29202906974d\",\n    \"end_report_sha256\": \"a9c526a00c7834cdfd553967548a0dc4c85dfd83e59edf3c714e714c28f641e1\",\n    \"start_budget_units\": \"25\",\n    \"end_budget_units\": \"28\",\n    \"steps_checked\": 3,\n    \"transitions_with_reversal\": 1,\n    \"contributors_with_reversals\": [\n      {\n        \"id\": \"d\",\n        \"decrease_count\": 1\n      },\n      {\n        \"id\": \"e\",\n        \"decrease_count\": 1\n      }\n    ],\n    \"reversals\": [\n      {\n        \"at_budget_units\": \"26\",\n        \"contributors_losing\": [\n          {\n            \"id\": \"d\",\n            \"before_units\": \"3\",\n            \"after_units\": \"2\"\n          },\n          {\n            \"id\": \"e\",\n            \"before_units\": \"3\",\n            \"after_units\": \"2\"\n          }\n        ]\n      }\n    ],\n    \"scope\": \"every consecutive atomic-unit budget in this window; arithmetic only, no payment or entitlement\"\n  },\n  \"verification\": {\n    \"schema\": \"rewardwindow-verification-v1\",\n    \"result\": \"verified every atomic-unit transition in window\",\n    \"scan_sha256\": \"96dc20f6c84be1687918e94e7be48fbdd61b0455973ac703015b0cdc4a0434f8\",\n    \"transitions_with_reversal\": 1,\n    \"start_budget_units\": \"25\",\n    \"end_budget_units\": \"28\",\n    \"scope\": \"every consecutive atomic-unit bu",
+      "stderr_excerpt": "",
+      "json_output_valid": true
+    },
+    {
+      "tool": "rewardaudit",
+      "kind": "selftest",
+      "command": "python3 -B line-3/tools/rewardaudit/selftest.py",
+      "expected_exit": 0,
+      "exit": 0,
+      "passed": true,
+      "stdout_excerpt": "",
+      "stderr_excerpt": "test_cli_files_tamper_duplicate_keys_overwrite (__main__.AuditTests.test_cli_files_tamper_duplicate_keys_overwrite) ... ok\ntest_demo_quota_and_ascii_tie (__main__.AuditTests.test_demo_quota_and_ascii_tie) ... ok\ntest_independent_of_allocator (__main__.AuditTests.test_independent_of_allocator) ... ok\ntest_input_refusals (__main__.AuditTests.test_input_refusals) ... ok\ntest_no_rounding_and_zero_weights (__main__.AuditTests.test_no_rounding_and_zero_weights) ... ok\ntest_order_independence_and_alias_isolation (__main__.AuditTests.test_order_independence_and_alias_isolation) ... ok\ntest_output_bound (__main__.AuditTests.test_output_bound) ... ok\ntest_real_public_address_consistency (__main__.AuditTests.test_real_public_address_consistency) ... ok\ntest_report_mutations (__main__.AuditTests.test_report_mutations) ... ok\ntest_small_exhaustive_subset_oracle (__main__.AuditTests.test_small_exhaustive_subset_oracle) ... ok\ntest_uint256_and_fractional_weights (__main__.AuditTests.test_uint256_and_fractional_weights) ... ok\ntest_wrong_remainder_winner (__main__.AuditTests.test_wrong_remainder_winner) ... ok\ntest_wrong_tie_winner_preserving_total (__main__.AuditTests.test_wrong_tie_winner_preserving_total) ... ok\n\n----------------------------------------------------------------------\nRan 13 tests in 0.632s\n\nOK\n",
+      "tests_passed": 13,
+      "tests_run": 13
+    },
+    {
+      "tool": "rewardaudit",
+      "kind": "demo",
+      "command": "python3 -B line-3/tools/rewardaudit/rewardaudit.py demo",
+      "expected_exit": 0,
+      "exit": 0,
+      "passed": true,
+      "stdout_excerpt": "{\n  \"schema\": \"rewardaudit-v1\",\n  \"result\": \"verified exact quota floors, remainder boundary and conservation\",\n  \"token\": {\n    \"chain_id\": 1,\n    \"address\": \"0xd782bdea4ef02a0bd391eb9089470c8080f0a68e\",\n    \"symbol\": \"ZTO\",\n    \"decimals\": 18,\n    \"block_number\": 26205319,\n    \"block_hash\": \"0xa4d2f8165b2b090fe930545d71b952c06e02401f56a892caf8d6f7a8a47d8a9a\"\n  },\n  \"budget_units\": \"1000000000000000000\",\n  \"floor_total_units\": \"999999999999999999\",\n  \"rounding_units\": 1,\n  \"cutoff_tie\": {\n    \"remainder_fraction\": \"1/3\",\n    \"tied_ids\": [\n      \"build\",\n      \"research\",\n      \"review\"\n    ],\n    \"awarded_ids\": [\n      \"build\"\n    ],\n    \"rule\": \"ascending ASCII contributor id\"\n  },\n  \"request_sha256\": \"2aab721988a38569c3ebc8a3beb62fe287fa4abde5e657d33022430c2f6d6314\",\n  \"report_sha256\": \"b6a779dc9458a76fe457f9f3d8c4f5aeb1644f168dc5f5f11c8c118bc431ae9a\",\n  \"metadata_sha256\": \"26804407dd1eb430871bd2b218a59974835e3fe5020829a7c8c1f25ff41465ec\",\n  \"contributors\": [\n    {\n      \"id\": \"build\",\n      \"quota_units_fraction\": \"1000000000000000000/3\",\n      \"floor_units\": \"333333333333333333\",\n      \"remainder_fraction\": \"1/3\",\n      \"rounding_unit_awarded\": true,\n      \"units\": \"333333333333333334\"\n    },\n    {\n      \"id\": \"research\",\n      \"quota_units_fraction\": \"1000000000000000000/3\",\n      \"floor_units\": \"333333333333333333\",\n      \"remainder_fraction\": \"1/3\",\n      \"rounding_unit_awarded\": false,\n      \"units\": \"333333333333333333\"\n    },\n    {\n      \"id\": \"review\",\n      \"quota_units_fraction\": \"1000000000000000000/3\",\n      \"floor_units\": \"333333333333333333\",\n      \"remainder_fraction\": \"1/3\",\n      \"rounding_unit_awarded\": false,\n      \"units\": \"333333333333333333\"\n    }\n  ],\n  \"scope\": \"offline arithmetic only; shared input validators, independent integer quota check",
+      "stderr_excerpt": "",
+      "json_output_valid": true
+    }
+  ]
+}

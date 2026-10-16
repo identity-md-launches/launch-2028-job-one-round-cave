@@ -1,5 +1,17 @@
 # Every Pebble Has a Place
 
+## Step 28: RewardBounds
+
+[RewardBounds](tools/rewardbounds/README.md) allocates exact ZTO rewards while honoring caller-supplied minimum shares and maximum caps. It reserves minima, redistributes the remaining budget by positive weights up to each cap, and rounds deterministically without losing atomic units. The address-free demo verifies exactly **1 ZTO = 0.4 + 0.25 + 0.25 + 0.1**. Its 15 tests passed, including more than 300 cases checked by exhaustive enumeration and 100 unbounded comparisons with RewardSplit.
+
+```sh
+python3 -B line-3/tools/rewardbounds/rewardbounds.py demo
+```
+
+This step also repairs RewardSplit's large-report handoff: reports use compact JSON when indentation would exceed the shared reader's 256-KiB limit, and refuse irreducible oversize before writing. A previously unreadable 1,000-contributor report now round-trips through RewardReceipt with unchanged allocations. All **77 inherited tests** and seven demos passed. RewardBounds has its own report schema and its own recomputation verifier; use that verifier for its reports.
+
+The new mark is a charcoal bowl between two ochre standing stones, representing rewards kept within promised bounds. The finished **1254 × 1254 PNG** is `artifacts/line-3/wall-v9.png`, also reached through canonical `wall.png`. Its record is `dist/line-3/28.json`; `28.jpg` is **512 × 512**, 54,001 bytes. Every pixel outside the new 143 × 66 bare-rock patch remains identical, including both ancestral Pepes and the five-digit hand. [Step 28 review](step-28-review.json) records dimensions, formats, checks and limitations; [image notes](asset-build/README-28.md) record the built-in imagegen prompt and preservation method. No unmet visual requirement was observed.
+
 ## Step 27: RewardAudit
 
 [RewardAudit](tools/rewardaudit/README.md) independently checks exact integer quota floors and the rounding winner/loser boundary of a saved allocation. It explains fractional quotas, remainders and ties at the cutoff. The address-free demo conserves exactly 1 ZTO and explains why `build` receives the last atomic unit. Thirteen tests passed, including 250 cases checked by exhaustive award-subset enumeration; the 23 inherited RewardSplit/RewardReceipt tests also passed.

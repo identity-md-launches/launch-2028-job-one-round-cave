@@ -26,6 +26,8 @@ Each exact proportional share is first rounded down. Remaining units go to the l
 
 `--output PATH` writes JSON to a new file and refuses to overwrite an existing file. File inputs and outputs must resolve inside the current working directory. Run from the workspace root. The output is an allocation report, not executable calldata, a balance assertion, gas estimate, or evidence that anybody has been paid. Optional addresses are parsed syntactically and normalized to lowercase; ownership and checksums are not verified.
 
+Inputs and outputs are capped at **256 KiB (262,144 bytes)**. Output normally uses indentation. If that would exceed the cap, the writer uses compact JSON with the same values so downstream tools can still read it. If even compact JSON is too large, it refuses before creating an output file or writing anything to stdout; reduce the roster or other input sizes. A valid 1,000-row allocation with long IDs and weights was **290,675 bytes** indented and **240,592 bytes** compact: it now round-trips through RewardReceipt with unchanged allocations. Some valid inputs can still produce reports too large for this bounded workflow.
+
 ## Refresh token metadata (optional, read only)
 
 ```sh
@@ -40,7 +42,7 @@ Inspection calls only `eth_chainId`, `eth_blockNumber`, `eth_getBlockByNumber`, 
 
 - Live Ethereum capture: block **26205319**, hash `0xa4d2f8165b2b090fe930545d71b952c06e02401f56a892caf8d6f7a8a47d8a9a`, ZTO (`Zero To One`), 18 decimals, total supply `1000000000000000000000000000` units. The exact observation is in `zto-mainnet.json`.
 - Offline demo: allocated exactly 1 ZTO, distributed its one rounding unit deterministically, and left zero units unallocated.
-- Offline self-test: all **15 tests passed**, including 300 seeded cases checking conservation and proportional-share bounds, permutations, zero weights, uint256 limits, malformed inputs, 1000 contributors, wrong-chain rejection, and a simulated block reorganization.
+- Offline self-test: all **19 tests passed**, including 300 seeded cases checking conservation and proportional-share bounds, permutations, zero weights, uint256 limits, malformed inputs, 1000 contributors, wrong-chain rejection, and a simulated block reorganization. Output checks cover the exact pretty/compact byte boundaries, the 1,000-row RewardReceipt round-trip, and refusal without a file or stdout when compact output is one byte too large.
 
 Run the tests without network access:
 

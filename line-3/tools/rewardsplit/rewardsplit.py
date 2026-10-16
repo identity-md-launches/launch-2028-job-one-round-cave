@@ -64,6 +64,12 @@ def read_json(value):
 
 def write_json(value, destination=None):
     result = json.dumps(value, indent=2, ensure_ascii=True) + "\n"
+    # Every emitted report must fit the same bounded reader used downstream.
+    # Large valid rosters may fit only without indentation and optional spaces.
+    if len(result.encode("utf-8")) > MAX_BYTES:
+        result = json.dumps(value, separators=(",", ":"), ensure_ascii=True) + "\n"
+    require(len(result.encode("utf-8")) <= MAX_BYTES,
+            "JSON output exceeds byte limit even without whitespace; use fewer contributors or smaller inputs")
     if destination:
         path = workspace_path(destination)
         # Refuse overwrites so a report cannot destroy a worker's input or code.

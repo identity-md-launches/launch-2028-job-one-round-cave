@@ -1,10 +1,13 @@
 #!/usr/bin/env python3
 """Offline behavior tests for RewardSplit; no network or wallet access."""
 import importlib.util
+from contextlib import redirect_stdout
+import io
 import itertools
 import json
 from pathlib import Path
 import random
+import tempfile
 import unittest
 from unittest.mock import patch
 
@@ -135,6 +138,60 @@ class RewardTests(unittest.TestCase):
     def test_no_external_input_paths(self):
         with self.assertRaises(rs.Invalid):
             rs.workspace_path(Path.cwd().parent / "outside.json")
+
+    def test_writer_preserves_pretty_output_at_exact_limit(self):
+        value = {"message": "ordinary report", "units": "123"}
+        expected = json.dumps(value, indent=2, ensure_ascii=True) + "\n"
+        with patch.object(rs, "MAX_BYTES", len(expected.encode())), redirect_stdout(io.StringIO()) as output:
+            rs.write_json(value)
+        self.assertEqual(output.getvalue(), expected)
+
+    def test_large_roster_compact_output_roundtrips_through_receipt(self):
+        request = {"budget": "1", "contributors": [
+            {"id": str(i).zfill(4) + "x" * 60,
+             "weight": "999999999999999999.999999999999999999"}
+            for i in range(1000)
+        ]}
+        report = rs.allocate(request, self.metadata)
+        pretty = json.dumps(report, indent=2, ensure_ascii=True) + "\n"
+        self.assertGreater(len(pretty.encode()), rs.MAX_BYTES)
+        scratch = Path.cwd() / "test" / "scratch"
+        scratch.mkdir(parents=True, exist_ok=True)
+        with tempfile.TemporaryDirectory(prefix="rewardsplit-roundtrip-", dir=scratch) as directory:
+            destination = Path(directory) / "report.json"
+            rs.write_json(report, destination)
+            self.assertLessEqual(destination.stat().st_size, rs.MAX_BYTES)
+            saved = rs.read_json(destination)
+            self.assertEqual(saved, report)
+        receipt_path = Path(__file__).resolve().parents[1] / "rewardreceipt" / "rewardreceipt.py"
+        receipt_spec = importlib.util.spec_from_file_location("rewardreceipt_roundtrip", receipt_path)
+        receipt = importlib.util.module_from_spec(receipt_spec)
+        receipt_spec.loader.exec_module(receipt)
+        result = receipt.verify(request, saved, self.metadata)
+        self.assertEqual(result["budget_units"], str(10 ** 18))
+        self.assertEqual(result["contributors"], 1000)
+
+    def test_writer_accepts_compact_output_at_exact_limit(self):
+        # {"x":"..."} plus the terminating newline has nine overhead bytes.
+        value = {"x": "x" * (rs.MAX_BYTES - 9)}
+        with redirect_stdout(io.StringIO()) as output:
+            rs.write_json(value)
+        encoded = output.getvalue().encode()
+        self.assertEqual(len(encoded), rs.MAX_BYTES)
+        self.assertEqual(rs.parse_json(encoded), value)
+
+    def test_writer_refuses_oversize_before_creating_file_or_stdout(self):
+        value = {"x": "x" * (rs.MAX_BYTES - 8)}
+        with redirect_stdout(io.StringIO()) as output, self.assertRaises(rs.Invalid):
+            rs.write_json(value)
+        self.assertEqual(output.getvalue(), "")
+        scratch = Path.cwd() / "test" / "scratch"
+        scratch.mkdir(parents=True, exist_ok=True)
+        with tempfile.TemporaryDirectory(prefix="rewardsplit-oversize-", dir=scratch) as directory:
+            destination = Path(directory) / "report.json"
+            with self.assertRaises(rs.Invalid):
+                rs.write_json(value, destination)
+            self.assertFalse(destination.exists())
 
 
 if __name__ == "__main__":
