@@ -8,13 +8,13 @@ Run from a workspace root:
 python3 -B shared/api_bundle/selftest.py
 ```
 
-Gathering 27 result: **41 integration tests passed**, also rerun in a workspace
-containing only this shared folder. New checks cover pre-parser directory byte
-and entry limits, malformed layout refusal, exact boundaries, second-archive
-limits, authentication alternatives/scopes/inheritance and all CLI outcomes.
-Earlier dependency, uniqueness, fixed-value, bound, multiple, digest, CRC,
-resource and cancellation checks still pass. Scratch lives in `test/scratch/`
-and is never a runtime dependency.
+Gathering 28 result: **47 integration tests passed**, including six new transport
+checks through approved archives: Bearer/Basic changes, API-key name/location,
+header case, surviving OR alternatives, anonymous overrides, malformed effective
+definitions, comparison limits and CLI refusal/review behavior. Earlier schema,
+authentication, digest, CRC, resource and cancellation checks still pass.
+All tests and the demo also pass from a workspace containing only this folder.
+Scratch lives in `test/scratch/` and is never a runtime dependency.
 
 For two archives you received:
 
@@ -35,7 +35,7 @@ Replace the uppercase argument labels with the real 64-character hex digests fro
 Paths must be in the current workspace with no symlink components, and the exact selected member must exist in both ZIPs. JSON goes to stdout. Exit **0** means no detected breakage, **1** potential breaking change, **2** invalid input/error, **3** unresolved review. Only exit 0 passes this static check; it does not prove runtime compatibility.
 
 The shared snapshot joins ZipGate and SafeZip (line 2) with ApiDelta, BoundCheck,
-MultipleCheck, ConstCheck, UniqueCheck, DependCheck and AuthCheck (line 4). `vendor/` contains ordinary
+MultipleCheck, ConstCheck, UniqueCheck, DependCheck, AuthCheck and SchemeCheck (line 4). `vendor/` contains ordinary
 source files; `SOURCES.json` records original/delivered hashes. SafeZip and
 ApiDelta are byte-identical snapshots. Extensions only adapt sibling module and
 demo capture paths to the shared layout. No line source was modified. Refresh
@@ -93,15 +93,26 @@ See the complete offline flow with one command:
 python3 -B shared/api_bundle/demo.py
 ```
 
-Observed: hypothetically removing the anonymous override from the captured
-`GET /requests/capabilities` operation makes it inherit root authentication.
-The tool produces one breaking and one retained review finding over five
-operations. Reproducible ZIPs carry approved SHA-256 hashes. An exact 63-byte
-directory budget and two-node budget accept `docs/openapi.json`; a 62-byte
-directory budget and one-node budget each refuse it. No member is extracted,
-executed, or called. The demo exits 0 after asserting its expected outcomes,
-creates disposable data in `test/scratch/`, and cleans up. Its hypothetical
-revision does not claim the live API changed.
+Observed: hypothetically changing the captured HTTP Bearer definition to Basic
+produces **six potential breaking findings and one retained review over five
+operations**, including aliases of the changed definition. Reproducible ZIPs
+carry approved SHA-256 hashes. An exact 63-byte directory budget and two-node
+budget accept `docs/openapi.json`; a 62-byte directory budget and one-node
+budget each refuse it. Nothing is extracted or executed. The demo exits 0 after
+asserting its expected outcomes and cleans up disposable `test/scratch/` data.
+This hypothetical revision does not claim the live API changed.
+
+SchemeCheck additionally checks declared scheme type, API-key name/location and
+HTTP authentication scheme for effective common-operation policies. API-key
+header names and HTTP schemes compare without ASCII case; query/cookie names
+compare exactly. A surviving OR alternative with compatible obligations and
+transport can prevent a transport finding. Anonymous overrides remain public
+in this symbolic model. Invalid supported fields in effective schemes fail even
+when both documents are identical. No credential or actual authorization is
+examined. OAuth flow URLs, OpenID discovery, TLS trust and bearerFormat remain
+unresolved reviews; nothing is fetched. Same-name schemes only; renames are not
+inferred. An additional 100,000 transport-alternative comparison cap refuses
+rather than returning a partial report.
 
 AuthCheck compares effective operation/root authentication requirements as OR
 alternatives of AND obligations. If an old alternative cannot satisfy any new
@@ -123,4 +134,4 @@ Local ZIP64 headers with classic central sizes may still pass the inherited
 payload reader. This is input bounding, not an operating-system RAM/CPU sandbox.
 Stored/deflated ZIPs, 1,000 entries, 16 MiB per file, 64 MiB total uncompressed, ratio 200, normalized portable names. Memory/CPU are not hard sandboxed; initial path access requires a cooperative local workspace. API analysis covers a bounded OpenAPI 3.0/3.1 subset and local object-member references. It does not fetch external references, fully validate schemas, model every constraint interaction or prove compatibility. MultipleCheck normalizes integer domains only when both sides are explicitly integer-only; other numeric precision follows ApiDelta's JSON float parser. Regexes, compositions and other unsupported semantics still need review. Description hashes cannot detect undocumented runtime changes.
 
-A gathering-27 read-only GET of `https://api.imd.fun/openapi.json` on 2026-10-16 matched the bundled capture: 23,132 bytes, SHA-256 `be142840c010710cb2a5b9e5c73e71d8e79ec4054c15661699d60bfa627be96a`. Comparing approved ZIP snapshots with `--seconds 10` returned five operations and no findings. Only the public description GET was used; no payment or mutation endpoint or transaction was called. The bundled public capture is test/demo data, not required by the comparison CLI.
+A gathering-28 read-only GET of `https://api.imd.fun/openapi.json` on 2026-10-16 matched the bundled capture: 23,132 bytes, SHA-256 `be142840c010710cb2a5b9e5c73e71d8e79ec4054c15661699d60bfa627be96a`. Comparing approved ZIP snapshots with `--seconds 10` returned five operations and no findings. Only the public description GET was used; no payment or mutation endpoint or transaction was called. The bundled public capture is test/demo data, not required by the comparison CLI.

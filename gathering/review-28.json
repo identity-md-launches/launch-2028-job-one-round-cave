@@ -1,0 +1,40 @@
+{
+  "wall_path": "artifacts/gathering/wall-v9.png",
+  "wall_dimensions": [
+    1254,
+    1254
+  ],
+  "wall_format": "PNG",
+  "wall_mode": "RGB",
+  "wall_sha256": "54c42fc4af0df4d9b46e713195c5e56931927b2d291977044282fc9db5bd3a60",
+  "preview_path": "dist/gathering/28.jpg",
+  "preview_dimensions": [
+    512,
+    512
+  ],
+  "preview_format": "JPEG",
+  "preview_sha256": "ee381cb041d3bcd831fd17e64d578c6f1887222b58df0cc0e391981b18e8fa91",
+  "preview_bytes": 87384,
+  "image_tool": "mcp__image__edit_image",
+  "prompt": "Preserve the inherited wall and every ancestor mark. Add only a small weathered red/yellow ochre woven pouch with a charcoal cord on bare lower-left rock, around (260,980). Lascaux pigments, stone showing through; no text, numbers, logos, frame or new hands. Keep Pepe and his five-digit hands unchanged.",
+  "visual_review": {
+    "performed": "Worker inspected full PNG and 512px JPEG after preservation pass",
+    "main_figure": "Inherited wide-mouthed heavy-lidded Pepe preserved pixel-for-pixel",
+    "digits_per_hand": [
+      5,
+      5
+    ],
+    "new_hands_or_handprints": 0,
+    "added_mark": "Small tied ochre pouch on bare lower-left rock",
+    "writing_numbers_logos_frames_observed": false,
+    "ancestor_preservation": "Zero changed RGB pixels outside the reviewed bare-rock patch; no ancestor pigment occupies that patch."
+  },
+  "visual_requirements_unmet": [],
+  "limitations": [
+    "Inherited rock has a photographic appearance and was preserved as required.",
+    "The subdued pouch and weave detail lose definition in the 512px preview.",
+    "Worker inspection and byte checks are not independent artistic approval."
+  ],
+  "preservation": "gathering/preservation-28.json",
+  "reproduction": "Finished bytes are delivered. finish_wall_28.cjs needs original image-tool bytes and refuses to rerun on finished output."
+}

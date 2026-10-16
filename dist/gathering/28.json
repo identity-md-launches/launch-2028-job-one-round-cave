@@ -1,0 +1,30 @@
+{
+  "name": "The Bound Bundle",
+  "image": "https://api.imd.fun/artifacts/54c42fc4af0df4d9b46e713195c5e56931927b2d291977044282fc9db5bd3a60",
+  "attributes": [
+    {
+      "trait_type": "Cave",
+      "value": "Lava"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Gathering"
+    },
+    {
+      "trait_type": "Number",
+      "value": 28
+    },
+    {
+      "trait_type": "Left behind",
+      "value": "API Bundle with SchemeCheck"
+    },
+    {
+      "trait_type": "Meaning",
+      "value": "A tied ochre pouch carries checked work between the four paths."
+    },
+    {
+      "trait_type": "One thing",
+      "value": "Gathering"
+    }
+  ]
+}

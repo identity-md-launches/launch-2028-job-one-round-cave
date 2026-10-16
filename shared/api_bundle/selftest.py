@@ -15,6 +15,82 @@ import api_bundle as bundle
 
 
 class BundleTests(unittest.TestCase):
+
+    def transport_doc(self, scheme):
+        doc = copy.deepcopy(self.doc)
+        doc['components'] = {'securitySchemes': {'wire': scheme}}
+        doc['security'] = [{'wire': []}]
+        return doc
+
+    def test_transport_public_capture_approved_archives(self):
+        old = json.loads(Path(__file__).with_name('imd-openapi.json').read_bytes())
+        new = copy.deepcopy(old)
+        names = sorted(k for k, v in new['components']['securitySchemes'].items()
+                       if v.get('type') == 'http')
+        new['components']['securitySchemes'][names[0]]['scheme'] = 'basic'
+        a, b = self.archive('old.zip', old), self.archive('new.zip', new)
+        report = bundle.compare(a, b, old_sha256=hashlib.sha256(a.read_bytes()).hexdigest(),
+                                new_sha256=hashlib.sha256(b.read_bytes()).hexdigest())
+        self.assertEqual(report['counts'], {'breaking': 6, 'review': 1, 'info': 0})
+        self.assertEqual(report['operations_compared'], 5)
+        self.assertTrue(all(f['code'] == 'security_transport_incompatible'
+                            for f in report['findings'] if f['severity'] == 'breaking'))
+        self.assertEqual(bundle.compare(a, a)['findings'], [])
+
+    def test_transport_api_key_location_name_and_case(self):
+        old = self.transport_doc({'type': 'apiKey', 'in': 'header', 'name': 'X-Access'})
+        a = self.archive('a.zip', old)
+        for scheme, breaking in [
+            ({'type': 'apiKey', 'in': 'header', 'name': 'x-access'}, False),
+            ({'type': 'apiKey', 'in': 'header', 'name': 'X-Other'}, True),
+            ({'type': 'apiKey', 'in': 'query', 'name': 'X-Access'}, True),
+            ({'type': 'http', 'scheme': 'bearer'}, True)]:
+            b = self.archive('b.zip', self.transport_doc(scheme))
+            report = bundle.compare(a, b)
+            self.assertEqual(any(f['code'] == 'security_transport_incompatible'
+                                 for f in report['findings']), breaking)
+
+    def test_transport_surviving_alternative_and_anonymous_override(self):
+        old = self.transport_doc({'type': 'http', 'scheme': 'bearer'})
+        old['components']['securitySchemes']['other'] = {'type': 'http', 'scheme': 'basic'}
+        # An AND old alternative can still use the surviving "other" transport.
+        old['security'] = [{'wire': [], 'other': []}]
+        new = copy.deepcopy(old)
+        new['security'] = [{'wire': []}, {'other': []}]
+        new['components']['securitySchemes']['wire']['scheme'] = 'basic'
+        a, b = self.archive('a.zip', old), self.archive('b.zip', new)
+        self.assertFalse(any(f['code'] == 'security_transport_incompatible'
+                             for f in bundle.compare(a, b)['findings']))
+        for doc in (old, new):
+            doc['paths']['/items']['get']['security'] = []
+        a, b = self.archive('a.zip', old), self.archive('b.zip', new)
+        self.assertEqual(bundle.compare(a, b)['counts']['breaking'], 0)
+
+    def test_transport_malformed_identical_effective_definition(self):
+        for scheme in ({'type': 'http'}, {'type': 'http', 'scheme': 'bad value'},
+                       {'type': 'apiKey', 'in': 'header', 'name': 'bad name'},
+                       {'type': 'apiKey', 'in': 'body', 'name': 'x'}):
+            a = self.archive('bad.zip', self.transport_doc(scheme))
+            with self.assertRaises(ValueError):
+                bundle.compare(a, a)
+
+    def test_transport_cli_break_invalid_and_retained_review(self):
+        a = self.archive('a.zip', self.transport_doc({'type': 'http', 'scheme': 'bearer'}))
+        for scheme, code in [({'type': 'http', 'scheme': 'basic'}, 1),
+                             ({'type': 'http'}, 2),
+                             ({'type': 'http', 'scheme': 'BEARER'}, 3)]:
+            b = self.archive('b.zip', self.transport_doc(scheme))
+            run = subprocess.run([sys.executable, '-B', bundle.__file__, str(a), str(b)],
+                                 capture_output=True, text=True, timeout=10)
+            self.assertEqual(run.returncode, code, run.stdout + run.stderr)
+
+    def test_transport_limits_refuse_without_partial_report(self):
+        from unittest.mock import patch
+        a = self.archive('a.zip', self.transport_doc({'type': 'http', 'scheme': 'bearer'}))
+        with patch.object(bundle.schemecheck.auth, 'MAX_COMPARISONS', 0):
+            with self.assertRaisesRegex(ValueError, 'comparison limit'):
+                bundle.compare(a, a)
+
     def auth_doc(self, policy):
         doc = copy.deepcopy(self.doc)
         doc['components'] = {'securitySchemes': {
@@ -366,7 +442,7 @@ class BundleTests(unittest.TestCase):
         proposed['paths']['/requests/quote']['post']['requestBody']['content']['application/json']['schema']['properties']['clientNote']['maxLength'] = 80
         old, new = self.archive('old.zip', baseline), self.archive('new.zip', proposed)
         report = bundle.compare(old, new)
-        self.assertEqual(report['extension'], 'authcheck-v1 (includes dependcheck and all earlier line 4 analyzers)')
+        self.assertEqual(report['extension'], 'schemecheck-v1 (includes authcheck and all earlier line 4 analyzers)')
         self.assertEqual(report['counts']['breaking'], 1)
         self.assertEqual(report['counts']['review'], 1)
         self.assertIn('size_bound_incompatible', [f['code'] for f in report['findings']])

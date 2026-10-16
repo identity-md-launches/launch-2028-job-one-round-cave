@@ -15,7 +15,8 @@ def demo():
     baseline = baseline_path.read_bytes()
     old = json.loads(baseline)
     new = copy.deepcopy(old)
-    del new['paths']['/requests/capabilities']['get']['security']
+    names = sorted(k for k, v in new['components']['securitySchemes'].items() if v.get('type') == 'http')
+    new['components']['securitySchemes'][names[0]]['scheme'] = 'basic'
     scratch = Path('test/scratch')
     scratch.mkdir(parents=True, exist_ok=True)
     with tempfile.TemporaryDirectory(prefix='api-bundle-demo-', dir=scratch) as directory:
@@ -42,9 +43,9 @@ def demo():
             directory_rejection = str(error)
         assert directory_rejection == 'directory byte limit exceeded before ZIP parsing'
         assert rejection == 'filesystem node limit exceeded'
-        assert report['counts']['breaking'] == 1
-        assert any(f['code'] == 'security_requirement_incompatible' for f in report['findings'])
-        return {'demo': 'Hypothetical removal of anonymous access from a captured public API; no service operation called.',
+        assert report['counts']['breaking'] == 6
+        assert any(f['code'] == 'security_transport_incompatible' for f in report['findings'])
+        return {'demo': 'Hypothetical Bearer-to-Basic transport change in a captured public API; no service operation called.',
                 'baseline_source': 'https://api.imd.fun/openapi.json',
                 'baseline_sha256': hashlib.sha256(baseline).hexdigest(),
                 'network_used': False, 'files_extracted': 0,

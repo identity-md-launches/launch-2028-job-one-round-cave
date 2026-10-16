@@ -13,7 +13,7 @@ import time
 import zipfile
 import zlib
 
-from vendor import apidelta, authcheck, safezip, zipgate
+from vendor import apidelta, schemecheck, safezip, zipgate
 
 MAX_ARCHIVE = 32 * 1024 * 1024
 
@@ -124,7 +124,7 @@ def compare(old, new, member='openapi.json', old_sha256=None, new_sha256=None,
     a, before = read_bundle(old, member, old_sha256, checkpoint, nodes, directory_bytes)
     b, after = read_bundle(new, member, new_sha256, checkpoint, nodes, directory_bytes)
     checkpoint()
-    report = authcheck.compare(a, b)
+    report = schemecheck.compare(a, b)
     checkpoint()
     report['bundle_inputs'] = {'old': before, 'new': after}
     return report

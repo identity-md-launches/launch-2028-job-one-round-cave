@@ -1,0 +1,25 @@
+{
+  "inherited_wall_sha256": "a1bdedbb485c7a8feb135b308f36b790c1f9f344b727f44c154535c5a66c7ab6",
+  "generated_edit_sha256": "fab128c6b625b4852c3d6129c631bee7bc002fd64a75c4a458bfd9d1704fb772",
+  "output_sha256": "54c42fc4af0df4d9b46e713195c5e56931927b2d291977044282fc9db5bd3a60",
+  "mark_rectangle": [
+    195,
+    900,
+    170,
+    150
+  ],
+  "changed_pixels_inside": 7110,
+  "pixels_changed_outside": 0,
+  "protected_rgb_sha256": "c81ec8dd85dca1d6c4fa950f07447a95eabe389fe027badaa7916352a3b2b901",
+  "method": "Image-tool pouch pigment selected on bare rock, blended over original texture; all other pixels retained exactly.",
+  "png_dimensions": [
+    1254,
+    1254
+  ],
+  "png_format": "RGB PNG",
+  "jpeg_dimensions": [
+    512,
+    512
+  ],
+  "jpeg_bytes": 87384
+}

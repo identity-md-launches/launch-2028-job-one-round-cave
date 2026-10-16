@@ -1,0 +1,872 @@
+[
+  {
+    "path": "line-1/tools/frontier/frontier.py",
+    "sha256": "dafe713aac5f48e9c343d88645bf4de7d8657b2715c4ec9b66bb48ab89f85840",
+    "imports": [
+      "argparse",
+      "decimal",
+      "fractions",
+      "heapq",
+      "importlib.util",
+      "json",
+      "pathlib",
+      "sys"
+    ]
+  },
+  {
+    "path": "line-1/tools/frontier/selftest.py",
+    "sha256": "d8c03d8bf8f47bae9f88c77f52c87c2f3aeaa85c2e8b53c48ebbf2e7518cb354",
+    "imports": [
+      "copy",
+      "fractions",
+      "frontier",
+      "itertools",
+      "random",
+      "unittest"
+    ]
+  },
+  {
+    "path": "line-1/tools/optplan/optplan.py",
+    "sha256": "3a142cecd7ea890e7b31e4b56483da4ecbf59d32bd8d0f5bfb1904fde31fbf1a",
+    "imports": [
+      "argparse",
+      "functools",
+      "importlib.util",
+      "itertools",
+      "json",
+      "pathlib",
+      "stat",
+      "sys"
+    ]
+  },
+  {
+    "path": "line-1/tools/optplan/selftest.py",
+    "sha256": "0bf455f4461a4afefae6562ff030823c2f0358aa74542cc61599eb7371c90b3b",
+    "imports": [
+      "collections",
+      "copy",
+      "itertools",
+      "json",
+      "optplan",
+      "pathlib",
+      "random",
+      "subprocess",
+      "sys",
+      "tempfile",
+      "unittest"
+    ]
+  },
+  {
+    "path": "line-1/tools/plancheck/plancheck.py",
+    "sha256": "ca0dcc14f120a462419e03a715be3282e88ac12dd3bab58b7cae2e813c6efe9d",
+    "imports": [
+      "argparse",
+      "decimal",
+      "fractions",
+      "json",
+      "pathlib",
+      "stat",
+      "sys"
+    ]
+  },
+  {
+    "path": "line-1/tools/plancheck/selftest.py",
+    "sha256": "87b1d727dbafbe0abfda921836e3fd7ef0d07b8bc4d271271bfd45102e15ecf1",
+    "imports": [
+      "copy",
+      "decimal",
+      "importlib.util",
+      "json",
+      "pathlib",
+      "plancheck",
+      "random",
+      "subprocess",
+      "sys",
+      "unittest"
+    ]
+  },
+  {
+    "path": "line-1/tools/plancompare/plancompare.py",
+    "sha256": "d576bb97a7c7035136fb74c3a77b343ebaa48808e0a6933a7a346562cf63c39e",
+    "imports": [
+      "argparse",
+      "decimal",
+      "fractions",
+      "importlib.util",
+      "json",
+      "pathlib",
+      "sys"
+    ]
+  },
+  {
+    "path": "line-1/tools/plancompare/selftest.py",
+    "sha256": "f562384d833ff7014457d310d0a94af03b0ebc64a6b8c5b484347be8af76c56b",
+    "imports": [
+      "copy",
+      "decimal",
+      "json",
+      "pathlib",
+      "plancompare",
+      "random",
+      "subprocess",
+      "sys",
+      "unittest"
+    ]
+  },
+  {
+    "path": "line-1/tools/replan/replan.py",
+    "sha256": "1b9251f205e834cfa4b8a314e3280b0ce0f9ffa45198d459a3c877767a81c0b2",
+    "imports": [
+      "argparse",
+      "heapq",
+      "importlib.util",
+      "json",
+      "math",
+      "pathlib",
+      "sys"
+    ]
+  },
+  {
+    "path": "line-1/tools/replan/selftest.py",
+    "sha256": "36ac05bb6548e62840acdbe55057e3cf765e1f73801220e205c92c1ec4652bc2",
+    "imports": [
+      "copy",
+      "json",
+      "pathlib",
+      "random",
+      "replan",
+      "subprocess",
+      "sys",
+      "unittest"
+    ]
+  },
+  {
+    "path": "line-1/tools/slackmap/selftest.py",
+    "sha256": "16c51130045e314253495549396ab21200d0daf0cbe8ec35d31614e272dbae3e",
+    "imports": [
+      "copy",
+      "decimal",
+      "fractions",
+      "itertools",
+      "json",
+      "pathlib",
+      "random",
+      "slackmap",
+      "subprocess",
+      "sys",
+      "unittest"
+    ]
+  },
+  {
+    "path": "line-1/tools/slackmap/slackmap.py",
+    "sha256": "bc1b5c2f556dc9c7a2a56348180a04a5ba1ad9bde6b7dbee0d085a9ffb98c704",
+    "imports": [
+      "argparse",
+      "decimal",
+      "fractions",
+      "heapq",
+      "importlib.util",
+      "json",
+      "pathlib",
+      "sys"
+    ]
+  },
+  {
+    "path": "line-1/tools/workplan/workplan.py",
+    "sha256": "9474f5153a7e9facd5fd444333a336eb5ca0e3bc246e8f3d588fdacd456643ec",
+    "imports": [
+      "argparse",
+      "heapq",
+      "json",
+      "math",
+      "pathlib",
+      "random",
+      "sys"
+    ]
+  },
+  {
+    "path": "line-2/tools/safezip/safezip.py",
+    "sha256": "b30519c0440c15568b0cdbb83e4f466fff7dc01cac16055605264d14ea3a731d",
+    "imports": [
+      "argparse",
+      "hashlib",
+      "hmac",
+      "io",
+      "json",
+      "math",
+      "os",
+      "pathlib",
+      "re",
+      "shutil",
+      "stat",
+      "tempfile",
+      "time",
+      "unicodedata",
+      "zipfile",
+      "zlib"
+    ]
+  },
+  {
+    "path": "line-2/tools/safezip/selftest.py",
+    "sha256": "0024fff73e12c794f0883b1067abfa6cef9ecc66408b98e426e0b275265a859a",
+    "imports": [
+      "argparse",
+      "hashlib",
+      "io",
+      "json",
+      "pathlib",
+      "safezip",
+      "stat",
+      "struct",
+      "subprocess",
+      "tempfile",
+      "unittest",
+      "warnings",
+      "zipfile"
+    ]
+  },
+  {
+    "path": "line-2/tools/safezip/swarm_demo.py",
+    "sha256": "62a7e077183de4f78d152b50dadae13ea4311da16530d7673da851c2afe47d89",
+    "imports": [
+      "hashlib",
+      "json",
+      "pathlib",
+      "safezip",
+      "tempfile",
+      "zipfile"
+    ]
+  },
+  {
+    "path": "line-2/tools/zipaudit/demo.py",
+    "sha256": "e6dbe82ebf1ca2ffa09048fb05dcdfbfea55b53e465b2cb42525ca152b3566ae",
+    "imports": [
+      "hashlib",
+      "json",
+      "pathlib",
+      "tempfile",
+      "zipaudit",
+      "zipfile"
+    ]
+  },
+  {
+    "path": "line-2/tools/zipaudit/selftest.py",
+    "sha256": "c39e7499cc8f2404e2907a0c96fad0cfd57d98acd6a36efe80658de3fa391567",
+    "imports": [
+      "hashlib",
+      "json",
+      "pathlib",
+      "stat",
+      "subprocess",
+      "sys",
+      "tempfile",
+      "unittest",
+      "zipaudit",
+      "zipfile"
+    ]
+  },
+  {
+    "path": "line-2/tools/zipaudit/zipaudit.py",
+    "sha256": "e941f8132279ed26f7612afc23f92068061b2a3bbcffbdb1d4af40eb815b9017",
+    "imports": [
+      "argparse",
+      "hashlib",
+      "json",
+      "os",
+      "pathlib",
+      "safezip",
+      "stat",
+      "sys",
+      "time",
+      "zipfile",
+      "zlib"
+    ]
+  },
+  {
+    "path": "line-2/tools/zipdiff/demo.py",
+    "sha256": "d60f77f994f8610270c9151437e0521bae7d9a58ecacb8d1c7f814bb42dc2b18",
+    "imports": [
+      "hashlib",
+      "json",
+      "pathlib",
+      "safezip",
+      "tempfile",
+      "zipdiff",
+      "zipfile"
+    ]
+  },
+  {
+    "path": "line-2/tools/zipdiff/selftest.py",
+    "sha256": "84df8c0b63000b8a92eea9520791c018225bd89b967bde9f536f17a900ac1872",
+    "imports": [
+      "hashlib",
+      "json",
+      "pathlib",
+      "stat",
+      "subprocess",
+      "sys",
+      "tempfile",
+      "unittest",
+      "zipdiff",
+      "zipfile"
+    ]
+  },
+  {
+    "path": "line-2/tools/zipdiff/zipdiff.py",
+    "sha256": "30b58eb19ce2f749148ac42f015da8eb1dcdaaca56c4ac5bd40e2f4ba81283fa",
+    "imports": [
+      "argparse",
+      "json",
+      "math",
+      "pathlib",
+      "re",
+      "safezip",
+      "sys",
+      "time",
+      "zipfile",
+      "zlib"
+    ]
+  },
+  {
+    "path": "line-2/tools/zipgate/demo.py",
+    "sha256": "107dbb0e571d453aa2f578f7a1c6a5f8a0ed2582e9227fa819042205eda6d36c",
+    "imports": [
+      "hashlib",
+      "json",
+      "pathlib",
+      "tempfile",
+      "zipfile",
+      "zipgate"
+    ]
+  },
+  {
+    "path": "line-2/tools/zipgate/selftest.py",
+    "sha256": "4ac4e78e3c0f5f967dbf82237e8eb3ba7af3adda1ad09850247ef575c4810ec6",
+    "imports": [
+      "hashlib",
+      "io",
+      "json",
+      "pathlib",
+      "random",
+      "shutil",
+      "struct",
+      "subprocess",
+      "sys",
+      "tempfile",
+      "unittest",
+      "unittest.mock",
+      "zipfile",
+      "zipgate"
+    ]
+  },
+  {
+    "path": "line-2/tools/zipgate/zipgate.py",
+    "sha256": "1e02964a97a88ce3e720707476a8376f021a0bfa61dfd3bd38d49de9a4494d87",
+    "imports": [
+      "argparse",
+      "hashlib",
+      "hmac",
+      "json",
+      "math",
+      "os",
+      "pathlib",
+      "re",
+      "safezip",
+      "stat",
+      "struct",
+      "sys",
+      "time",
+      "zipfile",
+      "zlib"
+    ]
+  },
+  {
+    "path": "line-2/tools/zipselect/demo.py",
+    "sha256": "0e561f0c355cd2dc2b609d5a1c151a3aa5bddf1223a406fa1729af9c0199db6e",
+    "imports": [
+      "hashlib",
+      "json",
+      "pathlib",
+      "tempfile",
+      "zipfile",
+      "zipselect"
+    ]
+  },
+  {
+    "path": "line-2/tools/zipselect/selftest.py",
+    "sha256": "b3b00fcea4aaa21cdd236f562d8917cbabf3478103273f4e81ed35ba71d91799",
+    "imports": [
+      "hashlib",
+      "io",
+      "json",
+      "pathlib",
+      "stat",
+      "subprocess",
+      "sys",
+      "tempfile",
+      "unittest",
+      "zipfile",
+      "zipselect"
+    ]
+  },
+  {
+    "path": "line-2/tools/zipselect/zipselect.py",
+    "sha256": "4ea5ca76e768c6578fc2950e26c1bd56890a4b5c83e4d94cc7291662efaf8692",
+    "imports": [
+      "argparse",
+      "hashlib",
+      "hmac",
+      "io",
+      "json",
+      "math",
+      "os",
+      "pathlib",
+      "re",
+      "shutil",
+      "stat",
+      "sys",
+      "tempfile",
+      "time",
+      "zipfile",
+      "zipgate",
+      "zlib"
+    ]
+  },
+  {
+    "path": "line-3/tools/rewardaudit/rewardaudit.py",
+    "sha256": "fc1da6ddd161e750ce616c51c784a916f50477f7e21a33c172fec638b28293c9",
+    "imports": [
+      "argparse",
+      "fractions",
+      "importlib.util",
+      "json",
+      "pathlib",
+      "re",
+      "sys"
+    ]
+  },
+  {
+    "path": "line-3/tools/rewardaudit/selftest.py",
+    "sha256": "a86b96b34f9281ad8f57cecf94c0d1da850f66438ec2aaa9d0af1cb8dececcdc",
+    "imports": [
+      "copy",
+      "fractions",
+      "itertools",
+      "json",
+      "pathlib",
+      "random",
+      "rewardaudit",
+      "subprocess",
+      "sys",
+      "tempfile",
+      "unittest",
+      "unittest.mock"
+    ]
+  },
+  {
+    "path": "line-3/tools/rewardbatch/rewardbatch.py",
+    "sha256": "bf98a74afdf3d2735f7c7dfc34465bf48fe2a24bb3304eaf5d06fecfb1a4baf5",
+    "imports": [
+      "argparse",
+      "importlib.util",
+      "json",
+      "pathlib",
+      "sys"
+    ]
+  },
+  {
+    "path": "line-3/tools/rewardbatch/selftest.py",
+    "sha256": "16bc3b18a682170f749cdd6f5afa6809598e58c9e66162614db9e2c7f0ff3dbf",
+    "imports": [
+      "copy",
+      "json",
+      "pathlib",
+      "random",
+      "rewardbatch",
+      "subprocess",
+      "sys",
+      "tempfile",
+      "unittest"
+    ]
+  },
+  {
+    "path": "line-3/tools/rewardbounds/rewardbounds.py",
+    "sha256": "43ef21f2f121936ac4269d5d0a1ae1b134adb237abdbb53a42f82e091e6474dd",
+    "imports": [
+      "argparse",
+      "fractions",
+      "importlib.util",
+      "json",
+      "pathlib",
+      "re",
+      "sys"
+    ]
+  },
+  {
+    "path": "line-3/tools/rewardbounds/selftest.py",
+    "sha256": "f0b55d78471c83209d6160f97624a7df333c42770e6567e521827a8d363daf7d",
+    "imports": [
+      "contextlib",
+      "copy",
+      "fractions",
+      "io",
+      "itertools",
+      "json",
+      "pathlib",
+      "random",
+      "rewardbounds",
+      "subprocess",
+      "sys",
+      "tempfile",
+      "unittest"
+    ]
+  },
+  {
+    "path": "line-3/tools/rewardcompare/rewardcompare.py",
+    "sha256": "98b8bb29b23c98dc9b1a663638a0cd9b6748b19d9ce8c9e51fb56314534a19d7",
+    "imports": [
+      "argparse",
+      "importlib.util",
+      "json",
+      "pathlib",
+      "sys"
+    ]
+  },
+  {
+    "path": "line-3/tools/rewardcompare/selftest.py",
+    "sha256": "408b7bc73df484b869f899d99667542e1e6580f236e93d11b7d57fae43e0d15c",
+    "imports": [
+      "contextlib",
+      "copy",
+      "io",
+      "random",
+      "rewardcompare",
+      "unittest"
+    ]
+  },
+  {
+    "path": "line-3/tools/rewardmerge/rewardmerge.py",
+    "sha256": "c18fddfeac80e8b6801e892fd2010fdaf95776269da9c606ddc07d9dcfe5c17f",
+    "imports": [
+      "argparse",
+      "importlib.util",
+      "json",
+      "pathlib",
+      "re",
+      "sys"
+    ]
+  },
+  {
+    "path": "line-3/tools/rewardmerge/selftest.py",
+    "sha256": "c6f611b4b30c33b7c8132c999d70ec5155dc201d1d8b7d526cd8dfac3192b383",
+    "imports": [
+      "copy",
+      "json",
+      "pathlib",
+      "random",
+      "rewardmerge",
+      "subprocess",
+      "sys",
+      "tempfile",
+      "unittest"
+    ]
+  },
+  {
+    "path": "line-3/tools/rewardreceipt/rewardreceipt.py",
+    "sha256": "0d1536ece1b0c6761ce3e4ec0ec1ef90a37e11b82622d6c941a98821a6a321ec",
+    "imports": [
+      "argparse",
+      "hashlib",
+      "importlib.util",
+      "json",
+      "pathlib",
+      "sys"
+    ]
+  },
+  {
+    "path": "line-3/tools/rewardreceipt/selftest.py",
+    "sha256": "5c3f6dba19df537f5106c19f4c4dc19b229e64fbbd750f7c7f4cc42cf46dccdb",
+    "imports": [
+      "json",
+      "pathlib",
+      "rewardreceipt",
+      "unittest"
+    ]
+  },
+  {
+    "path": "line-3/tools/rewardsplit/rewardsplit.py",
+    "sha256": "f75b31fc0d2e644b3a5bb5b28e3e18695c1aa8a23a4d9a53ad2c51f70b76b637",
+    "imports": [
+      "argparse",
+      "datetime",
+      "fractions",
+      "json",
+      "pathlib",
+      "re",
+      "sys",
+      "urllib.error",
+      "urllib.parse",
+      "urllib.request"
+    ]
+  },
+  {
+    "path": "line-3/tools/rewardsplit/selftest.py",
+    "sha256": "026d7285461f9361c0c575671c4af81464255fc36ff32524f25dc3bfad728e94",
+    "imports": [
+      "contextlib",
+      "importlib.util",
+      "io",
+      "itertools",
+      "json",
+      "pathlib",
+      "random",
+      "tempfile",
+      "unittest",
+      "unittest.mock"
+    ]
+  },
+  {
+    "path": "line-3/tools/rewardwindow/rewardwindow.py",
+    "sha256": "33831b883a29b28769a69d0727a2430e71795b73c737f1029180978dbb94993f",
+    "imports": [
+      "argparse",
+      "importlib.util",
+      "json",
+      "pathlib",
+      "sys"
+    ]
+  },
+  {
+    "path": "line-3/tools/rewardwindow/selftest.py",
+    "sha256": "2532379af251f748467b26ee2fb31d1561059d88a3e8cc8ceebb9febfc496627",
+    "imports": [
+      "copy",
+      "json",
+      "pathlib",
+      "random",
+      "rewardwindow",
+      "subprocess",
+      "sys",
+      "tempfile",
+      "unittest"
+    ]
+  },
+  {
+    "path": "line-4/tools/apidelta/apidelta.py",
+    "sha256": "9331dfe89870e60d63da4653d108aeb6621474b662c63ab8cc30082fcdf0b589",
+    "imports": [
+      "argparse",
+      "copy",
+      "hashlib",
+      "json",
+      "pathlib",
+      "re",
+      "sys"
+    ]
+  },
+  {
+    "path": "line-4/tools/apidelta/selftest.py",
+    "sha256": "124a035bf4b33dd5ca191869f36b629716a7846ae75dd2188cd9c23f5eb3212d",
+    "imports": [
+      "apidelta",
+      "copy",
+      "json",
+      "pathlib",
+      "subprocess",
+      "sys",
+      "tempfile",
+      "unittest"
+    ]
+  },
+  {
+    "path": "line-4/tools/authcheck/authcheck.py",
+    "sha256": "b600bac9e0597cc292102525dee8fc4519ace89839359fd1f95a69a67308b1f4",
+    "imports": [
+      "argparse",
+      "copy",
+      "importlib.util",
+      "json",
+      "pathlib",
+      "sys"
+    ]
+  },
+  {
+    "path": "line-4/tools/authcheck/selftest.py",
+    "sha256": "0017586fbb035ae7a377e6d357f89e6a03b224a25fe29814355fc1de51df4d3e",
+    "imports": [
+      "authcheck",
+      "copy",
+      "itertools",
+      "json",
+      "pathlib",
+      "subprocess",
+      "sys",
+      "tempfile",
+      "unittest"
+    ]
+  },
+  {
+    "path": "line-4/tools/boundcheck/boundcheck.py",
+    "sha256": "ad7fc5ccf92017fe2864f95be3cfbe73739afed08c784a4c828314083fc639e6",
+    "imports": [
+      "argparse",
+      "copy",
+      "decimal",
+      "importlib.util",
+      "json",
+      "pathlib",
+      "sys"
+    ]
+  },
+  {
+    "path": "line-4/tools/boundcheck/selftest.py",
+    "sha256": "5742b4b3fa7a1c35bdd75b43e3095b191f26a347c7e4180dcafa4582a1bc2fcd",
+    "imports": [
+      "boundcheck",
+      "copy",
+      "json",
+      "pathlib",
+      "subprocess",
+      "sys",
+      "tempfile",
+      "unittest"
+    ]
+  },
+  {
+    "path": "line-4/tools/constcheck/constcheck.py",
+    "sha256": "b704936a3507107cfc5ffe100108eb2a1e6987c719a35f453fd79842573fc6be",
+    "imports": [
+      "argparse",
+      "copy",
+      "fractions",
+      "importlib.util",
+      "json",
+      "pathlib",
+      "sys"
+    ]
+  },
+  {
+    "path": "line-4/tools/constcheck/selftest.py",
+    "sha256": "ab2642f57b0bf60f03067ed75f2baadb4c821355d77b5688a98f18785b4a2d43",
+    "imports": [
+      "constcheck",
+      "copy",
+      "json",
+      "pathlib",
+      "subprocess",
+      "sys",
+      "tempfile",
+      "unittest"
+    ]
+  },
+  {
+    "path": "line-4/tools/dependcheck/dependcheck.py",
+    "sha256": "d699701012be84d775c024fc75917d354f24ae2b202fd052053fbe1a0ff5a3bf",
+    "imports": [
+      "argparse",
+      "copy",
+      "importlib.util",
+      "json",
+      "pathlib",
+      "sys"
+    ]
+  },
+  {
+    "path": "line-4/tools/dependcheck/selftest.py",
+    "sha256": "50032d1fabc734cf37c5e6634881e824aec772fd3743c863d893abe538d57020",
+    "imports": [
+      "copy",
+      "dependcheck",
+      "itertools",
+      "json",
+      "pathlib",
+      "subprocess",
+      "sys",
+      "tempfile",
+      "unittest"
+    ]
+  },
+  {
+    "path": "line-4/tools/multiplecheck/multiplecheck.py",
+    "sha256": "2fb144bc429388dadea917e0125cf5f64becd2c144835873abe77047f02d540d",
+    "imports": [
+      "argparse",
+      "copy",
+      "fractions",
+      "importlib.util",
+      "json",
+      "pathlib",
+      "sys"
+    ]
+  },
+  {
+    "path": "line-4/tools/multiplecheck/selftest.py",
+    "sha256": "0ec5f8ef92de873993819445849d423517d2e567be9550bd62aacde4c4a35c2e",
+    "imports": [
+      "copy",
+      "fractions",
+      "json",
+      "multiplecheck",
+      "pathlib",
+      "subprocess",
+      "sys",
+      "tempfile",
+      "unittest"
+    ]
+  },
+  {
+    "path": "line-4/tools/schemecheck/schemecheck.py",
+    "sha256": "60d13c0a3d341f39df26de9094f551decf85f412beb515ef81e5bec614fcbc5a",
+    "imports": [
+      "argparse",
+      "copy",
+      "importlib.util",
+      "json",
+      "pathlib",
+      "re",
+      "sys"
+    ]
+  },
+  {
+    "path": "line-4/tools/schemecheck/selftest.py",
+    "sha256": "8995fbd088c2bc957ce6f01af55f34d098a2e85acfe45e7da52084ea1e9ffece",
+    "imports": [
+      "copy",
+      "itertools",
+      "json",
+      "pathlib",
+      "schemecheck",
+      "subprocess",
+      "sys",
+      "tempfile",
+      "unittest"
+    ]
+  },
+  {
+    "path": "line-4/tools/uniquecheck/selftest.py",
+    "sha256": "a66c7d1a4961715e0dc05db3af147f24817d6b4697f21bd1de198a4db5d71a69",
+    "imports": [
+      "copy",
+      "itertools",
+      "json",
+      "pathlib",
+      "subprocess",
+      "sys",
+      "tempfile",
+      "uniquecheck",
+      "unittest"
+    ]
+  },
+  {
+    "path": "line-4/tools/uniquecheck/uniquecheck.py",
+    "sha256": "c8153790ed62c504eadc174085309a081536e847a3b7d2a5128fdcaa31ffc30a",
+    "imports": [
+      "argparse",
+      "copy",
+      "importlib.util",
+      "json",
+      "pathlib",
+      "sys"
+    ]
+  }
+]

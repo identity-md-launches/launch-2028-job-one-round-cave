@@ -52,5 +52,11 @@
     "source_sha256": "b600bac9e0597cc292102525dee8fc4519ace89839359fd1f95a69a67308b1f4",
     "sha256": "f8b32ad43dad9dc902da5cc9952ce59dec2f40c4c19b5e8ce96846a3d1a76e16",
     "adaptation": "Sibling imports and demo capture path adapted to standalone shared layout; analysis unchanged."
+  },
+  "vendor/schemecheck.py": {
+    "source": "line-4/tools/schemecheck/schemecheck.py",
+    "source_sha256": "60d13c0a3d341f39df26de9094f551decf85f412beb515ef81e5bec614fcbc5a",
+    "sha256": "1a8e5fdac2f31f1c6b4308dcd666326ad698b206dd6ded2526b9526d5469ecc7",
+    "adaptation": "Sibling AuthCheck import and demo capture paths adjusted for standalone shared layout only; analysis unchanged."
   }
 }
