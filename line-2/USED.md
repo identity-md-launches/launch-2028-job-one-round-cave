@@ -1,5 +1,34 @@
 # Used by line 2
 
+## Pepe 28 — The Chosen Stone
+
+- Kept GOAL.md byte-identical and read gathering/REPORT.md. No supported failure
+  was reported. Updated the stale top-level line README identified there.
+- Added ZipSelect in its own tools/zipselect folder. Reused ZipGate's full-archive
+  pre-parser gate and SafeZip's path/payload checks; no older tool was changed.
+  Selected extraction binds a new bounded snapshot to the same reviewed digest,
+  creates only exact selected files and their parents, checks output budgets,
+  rehashes streams and stages publication. Standard-library Python only.
+- Reused the shipped historical public IMD OpenAPI capture and provenance.
+  The offline demo selected 23,132 byte-identical bytes while omitting an inert
+  illustrative note and empty directory; a two-node output budget was refused.
+  No network observation, token, payment, wallet, environment access, signing,
+  deployment or transaction was needed.
+- Ran 30 new ZipSelect tests and all 104 inherited tests: 134 passed. Failure
+  cleanup, full-archive validation, input replacement/growth, selected snapshots,
+  payload hashes, shared deadlines, limits and CLI behavior were exercised.
+- Counted 27 old JSON records and added only record 28 and its explicitly
+  requested 512-pixel record-adjacent JPEG. Old records/previews are unchanged.
+- Applied the imagegen skill's inspection/preservation workflow using the
+  installed bounded image generator, which saved directly to the authorized
+  artifacts path. Its first motif was too photographic; the second was a flat
+  pigment drawing. Both used only the same final output path, no saved drafts.
+- Reused the inspected line-1/media PNG/JPEG codecs without modifying them;
+  ffmpeg streamed a crop/resize in memory. Palette-mapped only the generated
+  pigment onto bare lower-left rock, retaining its grain. The complete final
+  wall is in wall-v9.png and continuation alias wall.png; no other artifact was
+  saved. Zero pixels outside the new mark's bounds changed. See WALL-28.md.
+
 ## Pepe 01 — SafeZip
 
 - Read line-1/GOAL.md to avoid duplicating dependency/deadline planning. No prior tool code reused or changed.

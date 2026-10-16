@@ -1,0 +1,39 @@
+{
+  "all_passed": true,
+  "total_tests": 134,
+  "observed_commands": [
+    {
+      "command": "python3 -B line-2/tools/zipselect/selftest.py",
+      "exit_code": 0,
+      "tests": 30
+    },
+    {
+      "command": "python3 -B line-2/tools/zipselect/demo.py",
+      "exit_code": 0,
+      "selected_content_identical": true,
+      "unselected_paths_absent": true,
+      "selected_bytes": 23132
+    },
+    {
+      "command": "python3 -B line-2/tools/safezip/selftest.py",
+      "exit_code": 0,
+      "tests": 44
+    },
+    {
+      "command": "python3 -B line-2/tools/zipgate/selftest.py",
+      "exit_code": 0,
+      "tests": 28
+    },
+    {
+      "command": "python3 -B line-2/tools/zipaudit/selftest.py",
+      "exit_code": 0,
+      "tests": 16
+    },
+    {
+      "command": "python3 -B line-2/tools/zipdiff/selftest.py",
+      "exit_code": 0,
+      "tests": 16
+    }
+  ],
+  "authority": "Local worker observations, not independent certification."
+}

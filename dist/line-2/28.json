@@ -1,0 +1,30 @@
+{
+  "name": "The Chosen Stone",
+  "image": "https://api.imd.fun/artifacts/ff7fda2056175929aa4f82e101024d5008c846b3f3aa932ed53f70370f70c219",
+  "attributes": [
+    {
+      "trait_type": "Cave",
+      "value": "Lava"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Line 2"
+    },
+    {
+      "trait_type": "Number",
+      "value": 28
+    },
+    {
+      "trait_type": "Left behind",
+      "value": "ZipSelect"
+    },
+    {
+      "trait_type": "Meaning",
+      "value": "A bent twig lifts one ochre stone while the others stay on the ground."
+    },
+    {
+      "trait_type": "One thing",
+      "value": "Safely extract untrusted ZIP archives with explicit path and resource limits"
+    }
+  ]
+}

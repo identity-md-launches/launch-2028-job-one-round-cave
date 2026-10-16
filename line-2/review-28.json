@@ -1,0 +1,64 @@
+{
+  "number": 28,
+  "tool": "ZipSelect",
+  "media": {
+    "previous_sha256": "2f074c996327f5962f359e087ca2beba2f6d3c5bbb04a98f7d099ae75676163d",
+    "pigment_sha256": "a30921e5eb37bf1dbb6018b374f3a5479272f7d5e45c62889a6729480090600e",
+    "sha256": "ff7fda2056175929aa4f82e101024d5008c846b3f3aa932ed53f70370f70c219",
+    "width": 1254,
+    "height": 1254,
+    "format": "PNG",
+    "png_bytes": 2823811,
+    "preview_width": 512,
+    "preview_height": 512,
+    "preview_format": "JPEG",
+    "preview_bytes": 89048,
+    "bounds": {
+      "left": 270,
+      "top": 920,
+      "right": 440,
+      "bottom": 1050
+    },
+    "changed_pixels": 6815,
+    "unchanged_pixels": 1565701,
+    "outside_mark_changed_pixels": 0,
+    "png_roundtrip_passed": true
+  },
+  "generation_tool": "installed bounded image generator mcp__image__generate",
+  "visual_review": {
+    "full_png_inspected": true,
+    "preview_jpeg_inspected": true,
+    "ancestor_hands_digit_counts": [
+      5,
+      5
+    ],
+    "new_hands": 0,
+    "words_or_numbers_observed": false,
+    "ancestral_marks_preserved": true,
+    "unmet_visual_requirements": [],
+    "limitations": [
+      "Inherited photographic-looking rock retained.",
+      "Forked twig simplified to a bent handle.",
+      "Fine detail softens in the JPEG preview.",
+      "Worker review, not independent certification."
+    ]
+  },
+  "checks": {
+    "zipselect_tests": 30,
+    "safezip_tests": 44,
+    "zipgate_tests": 28,
+    "zipaudit_tests": 16,
+    "zipdiff_tests": 16,
+    "total_tests": 134,
+    "all_passed": true,
+    "public_capture_demo_passed": true,
+    "public_capture_bytes": 23132,
+    "fresh_network_observation": false
+  },
+  "implementation_limits": [
+    "Cooperative workspace; no hostile local filesystem races.",
+    "Shared cooperative deadline, not a hard CPU or RAM sandbox.",
+    "All archive payloads must pass even when omitted from output.",
+    "Classic single-disk stored/deflated ZIP only."
+  ]
+}

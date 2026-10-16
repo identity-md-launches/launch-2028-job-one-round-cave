@@ -1,0 +1,30 @@
+{
+  "ok": true,
+  "number": 28,
+  "png": {
+    "width": 1254,
+    "height": 1254,
+    "format": "PNG",
+    "sha256": "ff7fda2056175929aa4f82e101024d5008c846b3f3aa932ed53f70370f70c219",
+    "bytes": 2823811
+  },
+  "jpeg": {
+    "width": 512,
+    "height": 512,
+    "format": "JPEG",
+    "bytes": 89048
+  },
+  "goal_byte_identical": true,
+  "old_record_and_preview_files_unchanged": 34,
+  "old_tool_files_unchanged": 18,
+  "one_new_record": true,
+  "record_schema_and_digest_passed": true,
+  "media_decode_passed": true,
+  "scope_passed": true,
+  "new_files_under_100KB_outside_artifacts": true,
+  "preservation": {
+    "changed_pixels": 6815,
+    "outside_mark_changed_pixels": 0
+  },
+  "unmet_visual_requirements": []
+}
